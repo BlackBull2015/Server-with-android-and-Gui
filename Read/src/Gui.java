@@ -35,6 +35,8 @@ public class Gui extends JPanel {
         JMenuItem q3 = new JMenuItem ("Exit");
 
         PrintVals tab1 = new PrintVals();
+        Graph1 tab2 = new Graph1();
+        Graph2 tab3 = new Graph2();
 
         //Action listiner for each menu bar
        q1.addActionListener(new ActionListener() {
@@ -43,11 +45,9 @@ public class Gui extends JPanel {
                JFileChooser jfc = new JFileChooser();
                jfc.showOpenDialog(jfc);
                fl = jfc.getSelectedFile();
-               try {
-                   tab1.addToArea(fl);
-               } catch (IOException e1) {
-                   e1.printStackTrace();
-               }
+               tab1.SetFile(fl);
+               tab2.SetFile(fl);
+               tab3.SetFile(fl);
 
                tabs.setSelectedIndex(0);
            }
@@ -72,8 +72,8 @@ public class Gui extends JPanel {
 
         //tabs.addTab(OpenF, new fill_Blanks_Tab());
         tabs.addTab("Read Values", tab1);
-        tabs.addTab("Draw Graph", new JPanel());
-        tabs.addTab("Terrain", new JPanel());
+        tabs.addTab("Draw Graph", tab2);
+        tabs.addTab("Terrain", tab3);
 
         //construct components
         jcomp1 = new JMenuBar();
