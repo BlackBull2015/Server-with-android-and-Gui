@@ -6,41 +6,22 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start Service"
+            android:text="Connect"
             android:id="@+id/button2" android:layout_gravity="center_horizontal"
-            android:onClick="start"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stop Service"
-            android:id="@+id/button3" android:layout_gravity="center_horizontal"
-            android:onClick="stop"
-            android:clickable="false"
-            />
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Numbers"
-            android:id="@+id/textView" android:layout_gravity="center_horizontal"/>
+            android:onClick="connect"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Connect To Server"
             android:id="@+id/button" android:layout_gravity="center_horizontal"
-            android:onClick="sendNums"
-            android:clickable="false"/>
+            android:onClick="read"
+            />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Server"
             android:id="@+id/textView2" android:layout_gravity="center_horizontal"/>
-    <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ratingBar" android:layout_gravity="center_horizontal"
-            android:onClick="Rating"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

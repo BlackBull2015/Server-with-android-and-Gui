@@ -13,7 +13,7 @@ public class MinMax extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String sts = "";
-        String inputString = request.getParameter("num");
+        String inputString = request.getParameter("data");
         try {
 
 
@@ -23,31 +23,37 @@ public class MinMax extends HttpServlet {
             System.out.println("JSON object was created succesfull");
 
 
-            double[] array = new double[5];
+            String[] array = new String[12];
 
-             array[0]= inputValues.getDouble("one");
-             array[1] = inputValues.getDouble("two");
-             array[2]= inputValues.getDouble("three");
-             array[3]= inputValues.getDouble("four");
-             array[4]= inputValues.getDouble("five");
+             array[0]= inputValues.getString("x");
+             array[1] = inputValues.getString("y");
+             array[2]= inputValues.getString("z");
+             array[3]= inputValues.getString("mx");
+             array[4]= inputValues.getString("my");
+             array[5]= inputValues.getString("mz");
+             array[6]= inputValues.getString("tmp");
             //***********************************************************//
 
-            System.out.println(array[0]);
-            System.out.println(array[1]);
-            System.out.println(array[2]);
-            System.out.println(array[3]);
-            System.out.println(array[4]);
+            System.out.print(array[0]+ " ");
+            System.out.print(array[1]+ " ");
+            System.out.print(array[2]+ " ");
+            System.out.print(array[3]+ " ");
+            System.out.print(array[4]+ " ");
+            System.out.print(array[5]+ " ");
+            System.out.println(array[6]+ " ");
             //***********************************************************//
             
             try{
                 File fl = new File("C:/temp/base.txt");
                 PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fl,true)));
 
-                out.print(array[0] + ", ");
-                out.print(array[1] + ", ");
-                out.print(array[2]+ ", ");
-                out.print(array[3]+ ", ");
-                out.println(array[4]+ ", ");
+                out.print(array[0]+ " ");
+                out.print(array[1]+ " ");
+                out.print(array[2]+ " ");
+                out.print(array[3]+ " ");
+                out.print(array[4]+ " ");
+                out.print(array[5]+ " ");
+                out.println(array[6]+ " ");
                 out.close();
 
             }catch (IOException e) {
@@ -57,29 +63,29 @@ public class MinMax extends HttpServlet {
             //***********************************************************//
 
 
-            Arrays.sort(array);
+            //Arrays.sort(array);
 
-            double max = array[0];
-            double min = array[array.length-1];
-            double sum = 0;
-
-
-            for (int i = 0; i <array.length; i++){
-                sum += array[i];
-            }
+          //  double max = array[0];
+         //  double min = array[array.length-1];
+          //  double sum = 0;
 
 
-            JSONObject jsn = new JSONObject();
-            jsn.put("max",max);
-            jsn.put("min",min);
-            jsn.put("sum",sum);
+         //   for (int i = 0; i <array.length; i++){
+         //       sum += array[i];
+         //   }
 
-            System.out.println("Max is: "+ max);
-            System.out.println("Min is: "+ min);
-            System.out.println("Sum is: "+ sum);
 
-            PrintWriter out = response.getWriter();
-            out.println(jsn);
+//            JSONObject jsn = new JSONObject();
+//            jsn.put("max",max);
+//            jsn.put("min",min);
+//            jsn.put("sum",sum);
+//
+//            System.out.println("Max is: "+ max);
+//            System.out.println("Min is: "+ min);
+//            System.out.println("Sum is: "+ sum);
+//
+//            PrintWriter out = response.getWriter();
+//            out.println(jsn);
 
 
         } catch (Exception e) {

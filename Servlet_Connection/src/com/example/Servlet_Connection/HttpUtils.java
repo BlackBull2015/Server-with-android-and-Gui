@@ -3,6 +3,7 @@ package com.example.Servlet_Connection;
 import java.io.IOException;
 import java.util.*;
 
+import android.util.Log;
 import org.apache.http.*;
 import org.apache.http.client.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -66,7 +67,8 @@ public class HttpUtils {
     httpPost.setEntity(entity);
     ResponseHandler<String> handler = new BasicResponseHandler();
     System.out.println("Prepared URL to send");
-    System.out.println(httpPost);
+    //Log.e("Mytask",httpPost.toString());
+   // System.out.println(httpPost);
 
     return(client.execute(httpPost, handler));
   }
