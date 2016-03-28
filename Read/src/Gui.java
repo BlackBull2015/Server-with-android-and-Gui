@@ -1,19 +1,25 @@
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Gui extends JPanel {
+   // protected ArrayList<Reading> Data = new ArrayList();
+   protected ArrayList<Reading> DataReadMain = new ArrayList();
 
     File fl;
 
     private static String OpenF = "OpenFile";
-    private static String truefalse = "True/False";
-    private static String mcb = "Multple Choice Basic";
+    private static String Craft = "CreatePoints";
+    private static String exit = "Exit";
 
     private JMenuBar jcomp1;
 
@@ -31,8 +37,8 @@ public class Gui extends JPanel {
         //construct preComponents of File menu
         JMenu fileMenu = new JMenu ("File");
         JMenuItem q1 = new JMenuItem (OpenF);
-        JMenuItem q2 = new JMenuItem ("Reload File");
-        JMenuItem q3 = new JMenuItem ("Exit");
+        JMenuItem q2 = new JMenuItem (Craft);
+        JMenuItem q3 = new JMenuItem (exit);
 
         PrintVals tab1 = new PrintVals();
         Graph1 tab2 = new Graph1();
@@ -55,7 +61,27 @@ public class Gui extends JPanel {
         q2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tabs.setSelectedIndex(1);
+
+              //  DataReadMain = tab1.DataRead;
+                try {
+                    DataReadMain = CreateData(fl);
+                    tab1.setData(DataReadMain);
+                    tab2.setData(DataReadMain);
+                    tab3.setData(DataReadMain);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                //Test Code
+//                if(!DataReadMain.isEmpty()) {
+//                    int size, count = 0;
+//                    size = DataReadMain.size();
+//                    System.out.println("Size is: "+size);
+//                    while (count < size) {
+//                        System.out.println(DataReadMain.get(count) + "countis: "+count);
+//                        count++;
+//                    }
+//                }
+             //   tabs.setSelectedIndex(1);
             }
         });
         q3.addActionListener(new ActionListener() {
@@ -83,7 +109,38 @@ public class Gui extends JPanel {
         add(tabs,"grow,push");
     }
 
+    public ArrayList CreateData(File f) throws IOException {
 
+        ArrayList<Reading> DataRead = new ArrayList<>();
+        String str;
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String[] Informaions;
+
+        while((str = br.readLine()) != null) {
+            if (str.length() > 0) {
+                Reading Rd = new Reading();
+                Informaions = str.split(" ");
+                Rd.setAccXValue(Integer.parseInt(Informaions[0]));
+                Rd.setAccYValue(Integer.parseInt(Informaions[1]));
+                Rd.setAccZValue(Integer.parseInt(Informaions[2]));
+
+                Rd.setMagXValue(Integer.parseInt(Informaions[3]));
+                Rd.setMagYValue(Integer.parseInt(Informaions[4]));
+                Rd.setMagZValue(Integer.parseInt(Informaions[5]));
+
+                Rd.setTemperature(Integer.parseInt(Informaions[6]));
+
+                Rd.setTime("N/A");
+
+                DataRead.add(Rd);
+            }
+        }
+
+        if(!DataRead.isEmpty()){
+            return DataRead;
+        }else
+            return null;
+    }
 
 
 

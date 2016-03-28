@@ -1,17 +1,19 @@
 import net.miginfocom.swing.MigLayout;
 
+import javax.sound.midi.MidiDevice;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Created by Eric on 3/23/2016.
  */
 public class PrintVals extends JPanel {
+
+    protected ArrayList<Reading> DataRead = new ArrayList();
+
 
     JTextArea area = new JTextArea();
     JButton jbtn = new JButton("Read");
@@ -29,15 +31,12 @@ public class PrintVals extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if(file != null) {
-
                     try {
                         addToArea();
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
                 }
-            }
         });
 
     }
@@ -45,15 +44,23 @@ public class PrintVals extends JPanel {
 
     public void addToArea() throws IOException {
 
-        String str;
-        BufferedReader br = new BufferedReader(new FileReader(file));
 
-        while((str = br.readLine()) != null) {
-            area.append(str);
+        int size, count = 0;
+
+        size = DataRead.size();
+        System.out.println("Size is: " + size);
+        while (count < size) {
+            area.append(DataRead.get(count).toString());
             area.append("\n");
-            //updateUI();
+            count++;
         }
+
+            //updateUI();
+
+
     }
+
+    public void setData(ArrayList a) {DataRead = a;}
 
     public void SetFile(File f){
         file = f;
