@@ -33,7 +33,7 @@ public class main extends Activity {
     BluetoothDevice masterdevice;
     private static String address = "98:D3:33:80:6E:8F";
     private static final String TAG = "MyActivity";
-
+    String baseUrl = "http://192.168.0.104:8080/MinMax";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,17 +72,17 @@ public class main extends Activity {
                     int bytesAvailable = inStream.available();
                     //    Log.e(TAG, "Read length to read" + bytesAvailable);
                     if(bytesAvailable > 0) {
-                        Log.e("TAG", Integer.toString(bytesAvailable));
+                        //Log.e("TAG", Integer.toString(bytesAvailable));
                         byte[] packetBytes = new byte[bytesAvailable];
                         inStream.read(packetBytes);
                         str += new String(packetBytes, StandardCharsets.UTF_8);
-                        if(str.contains("\\n")) {
+                        if(str.contains("end")) {
                             SendData(str);
                            // publishProgress(str);
-                            Log.e("TAG", str);
+                            //Log.e("TAG", str + "Thats in creation\n");
                             str = "";
                         }
-                        Log.e("TAG", str);
+                       // Log.e("TAG", str);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -108,7 +108,7 @@ public class main extends Activity {
                 json.put("my", info[11]);
                 json.put("mz", info[13]);
                 json.put("tmp", info[15]);
-                String baseUrl = "http://192.168.0.104:8080/MinMax";
+
                 // String baseUrl = "http://192.168.1.101:8080/MinMax";
                 Log.e(TAG,json.toString());
                 jsonString = HttpUtils.urlContentPost(baseUrl, "data", json.toString());

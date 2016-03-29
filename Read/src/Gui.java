@@ -119,20 +119,26 @@ public class Gui extends JPanel {
         while((str = br.readLine()) != null) {
             if (str.length() > 0) {
                 Reading Rd = new Reading();
-                Informaions = str.split(" ");
-                Rd.setAccXValue(Integer.parseInt(Informaions[0]));
-                Rd.setAccYValue(Integer.parseInt(Informaions[1]));
-                Rd.setAccZValue(Integer.parseInt(Informaions[2]));
+                try {
+                    Informaions = str.split(" ");
+                    Rd.setAccXValue(Integer.parseInt(Informaions[0]));
+                    Rd.setAccYValue(Integer.parseInt(Informaions[1]));
+                    Rd.setAccZValue(Integer.parseInt(Informaions[2]));
 
-                Rd.setMagXValue(Integer.parseInt(Informaions[3]));
-                Rd.setMagYValue(Integer.parseInt(Informaions[4]));
-                Rd.setMagZValue(Integer.parseInt(Informaions[5]));
+                    Rd.setMagXValue(Integer.parseInt(Informaions[3]));
+                    Rd.setMagYValue(Integer.parseInt(Informaions[4]));
+                    Rd.setMagZValue(Integer.parseInt(Informaions[5]));
 
-                Rd.setTemperature(Integer.parseInt(Informaions[6]));
+                    Rd.setTemperature(Integer.parseInt(Informaions[6]));
 
-                Rd.setTime("N/A");
+                    Rd.setTime("N/A");
 
-                DataRead.add(Rd);
+                    DataRead.add(Rd);
+                }catch (Exception e){
+                    System.out.println("Line not compatible");
+                }
+
+
             }
         }
 

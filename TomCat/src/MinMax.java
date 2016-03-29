@@ -18,7 +18,7 @@ public class MinMax extends HttpServlet {
 
 
             System.out.println("String of creation is: "+inputString );
-            System.out.println("\nPrepering to Create JSON object");
+        //    System.out.println("\nPrepering to Create JSON object");
             JSONObject inputValues = new JSONObject(inputString);
             System.out.println("JSON object was created succesfull");
 
@@ -34,13 +34,13 @@ public class MinMax extends HttpServlet {
              array[6]= inputValues.getString("tmp");
             //***********************************************************//
 
-            System.out.print(array[0]+ " ");
-            System.out.print(array[1]+ " ");
-            System.out.print(array[2]+ " ");
-            System.out.print(array[3]+ " ");
-            System.out.print(array[4]+ " ");
-            System.out.print(array[5]+ " ");
-            System.out.println(array[6]+ " ");
+//            System.out.print(array[0]+ " ");
+//            System.out.print(array[1]+ " ");
+//            System.out.print(array[2]+ " ");
+//            System.out.print(array[3]+ " ");
+//            System.out.print(array[4]+ " ");
+//            System.out.print(array[5]+ " ");
+//            System.out.println(array[6]+ " ");
             //***********************************************************//
             
             try{
