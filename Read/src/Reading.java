@@ -30,6 +30,11 @@ public class Reading {
                 " Z="+magZValue+" and Temp: "+temperature;
     }
 
+    public String toStringDb(){
+        return accXValue+" "+accYValue+" "+accZValue+" "+magXValue+" "+magYValue+
+                " "+magZValue+" "+temperature;
+    }
+
 
     public int getAccXValue() {
         return accXValue;

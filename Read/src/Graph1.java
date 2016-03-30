@@ -2,6 +2,8 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 public class Graph1 extends JPanel {
     protected ArrayList<Reading> DataRead = new ArrayList();
     File file;
-    JButton jbtn = new JButton("Read");
+    JButton jbtn = new JButton("Draw");
     JPanel draw = new JPanel();
     public Graph1(){
 
@@ -19,6 +21,19 @@ public class Graph1 extends JPanel {
         setLayout(new MigLayout("", "[]", "[] []"));
         add(jbtn, "wrap,center");
         add(draw,"grow, push");
+
+
+        jbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+
+            }
+        });
+
+
+
 
 
     }

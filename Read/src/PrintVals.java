@@ -50,7 +50,7 @@ public class PrintVals extends JPanel {
         size = DataRead.size();
         System.out.println("Size is: " + size);
         while (count < size) {
-            area.append(DataRead.get(count).toString());
+            area.append(count + ":  " +DataRead.get(count).toString());
             area.append("\n");
             count++;
         }

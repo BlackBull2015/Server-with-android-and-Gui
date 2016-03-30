@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="93a50970-7043-406f-8fb5-15b00e982dae">
+    <database-info product="MySQL" version="5.6.27-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="readings"/>
+    <table name="datareadings" schema="" catalog="readings" type="TABLE">
+      <column name="tableID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="accX" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="accY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="accZ" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="magX" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="magY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="magZ" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tmp" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="time" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="tableID"/>
+    </table>
+  </data-source>
+</component>
