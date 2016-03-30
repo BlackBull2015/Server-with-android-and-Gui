@@ -24,6 +24,7 @@ public class Gui extends JPanel {
     private static String ReadFromDb = "Database Read";
     private static String SaveInDb = "Database Save";
     private static String exit = "Exit";
+    private static String ClearDb = "ClearDb";
 
     private JMenuBar jcomp1;
 
@@ -40,18 +41,21 @@ public class Gui extends JPanel {
 
         //construct preComponents of File menu
         JMenu fileMenu = new JMenu ("File");
+        JMenu Database = new JMenu("Database");
+
         JMenuItem q1 = new JMenuItem (OpenF);
         JMenuItem q2 = new JMenuItem (Craft);
         JMenuItem q4 = new JMenuItem(ReadFromDb);
         JMenuItem q5 = new JMenuItem(SaveInDb);
         JMenuItem q3 = new JMenuItem (exit);
+        JMenuItem d1 = new JMenuItem (ClearDb);
 
         PrintVals tab1 = new PrintVals();
         Graph1 tab2 = new Graph1();
         Graph2 tab3 = new Graph2();
 
         //Action listiner for each menu bar
-       q1.addActionListener(new ActionListener() {
+        q1.addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
                JFileChooser jfc = new JFileChooser();
@@ -96,7 +100,6 @@ public class Gui extends JPanel {
                 System.exit(1);
             }
         });
-
         q4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -106,14 +109,18 @@ public class Gui extends JPanel {
                 tab3.setData(DataReadMain);
             }
         });
-
         q5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 saveInDb();
             }
         });
-
+        d1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ResetDatabase();
+            }
+        });
 
         //Adding components into File Menu
         fileMenu.add(q1);
@@ -122,6 +129,7 @@ public class Gui extends JPanel {
         fileMenu.add(q4);
         fileMenu.add(q3);
 
+        Database.add(d1);
 
         //tabs.addTab(OpenF, new fill_Blanks_Tab());
         tabs.addTab("Read Values", tab1);
@@ -131,6 +139,7 @@ public class Gui extends JPanel {
         //construct components
         jcomp1 = new JMenuBar();
         jcomp1.add(fileMenu);
+        jcomp1.add(Database);
         //Adding components to panel
         add(jcomp1," growx,wrap,top");
         add(tabs,"grow,push");
@@ -311,6 +320,46 @@ public class Gui extends JPanel {
         }
     }
 
+    private void ResetDatabase(){
+
+        try {
+
+                // load database driver class
+                Class.forName("com.mysql.jdbc.Driver");
+
+                // connect to database
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/readings", "root", "root");
+
+                // create Statement to query database
+                Statement statement = connection.createStatement();
+
+                // query database
+            statement.executeUpdate("drop TABLE IF EXISTS datareadings ");
+                    //    statement.executeQuery("drop TABLE datareadings");
+
+                        statement.executeUpdate("create table datareadings (\n" +
+                                "  tableID int  AUTO_INCREMENT,\n" +
+                                "  accX int (10) NOT NULL,\n" +
+                                "  accY int (10) NOT NULL,\n" +
+                                "  accZ int (10) NOT NULL,\n" +
+                                "  magX int (10) NOT NULL,\n" +
+                                "  magY int (10) NOT NULL,\n" +
+                                "  magZ int (10) NOT NULL,\n" +
+                                "  tmp int (10) NOT NULL,\n" +
+                                "  time VARCHAR (50) NOT NULL,\n" +
+                                "\n" +
+                                "  constraint pk_table primary key (tableID)\n" +
+                                ")");
+
+                System.out.println("Database Reseted");
+                // close statement and connection
+                statement.close();
+                connection.close();
+        } catch (Exception ee) {
+            System.out.println("Failure");
+        }
+    }
 
 
 
