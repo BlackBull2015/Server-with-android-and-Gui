@@ -36,12 +36,17 @@ public class Graph1 extends JPanel {
 
                 if(!DataRead.isEmpty()){
                     java.util.List<Integer> scores = new ArrayList<Integer>();
+                    java.util.List<Integer> scoresY = new ArrayList<Integer>();
+                    java.util.List<Integer> scoresZ = new ArrayList<Integer>();
                     //Random random = new Random();
                     int maxDataPoints = DataRead.size();
                     for (int i = 0; i < maxDataPoints ; i++) {
                         scores.add(DataRead.get(i).getAccXValue());
+                        scoresY.add(DataRead.get(i).getAccYValue());
+                        scoresZ.add(DataRead.get(i).getAccZValue());
+
                     }
-                    Graph1Draw mainPanel = new Graph1Draw(scores);
+                    Graph1Draw mainPanel = new Graph1Draw(scores,scoresY,scoresZ);
 
                     JScrollPane scroll = new JScrollPane (mainPanel,
                             JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
