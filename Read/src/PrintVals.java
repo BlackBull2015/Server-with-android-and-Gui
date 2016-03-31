@@ -23,7 +23,8 @@ public class PrintVals extends JPanel {
 
     public PrintVals(){
 
-        setLayout(new MigLayout("", "[]","[] []"));
+
+        setLayout(new MigLayout("", "",""));
         add(jbtn, "wrap,center");
         add(scroll,"grow, push");
 
@@ -43,8 +44,6 @@ public class PrintVals extends JPanel {
 
 
     public void addToArea() throws IOException {
-
-
         int size, count = 0;
 
         size = DataRead.size();
@@ -54,10 +53,6 @@ public class PrintVals extends JPanel {
             area.append("\n");
             count++;
         }
-
-            //updateUI();
-
-
     }
 
     public void setData(ArrayList a) {DataRead = a;}

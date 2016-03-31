@@ -1,6 +1,7 @@
 /**
  * Created by Eric on 3/29/2016.
  */
+
 public class Reading {
 
     private int accXValue;
@@ -10,6 +11,8 @@ public class Reading {
     private int magXValue;
     private int magYValue;
     private int magZValue;
+    private int heading;
+
 
     private int temperature;
     private String time;
@@ -21,6 +24,7 @@ public class Reading {
          magXValue = 0;
          magYValue = 0;
          magZValue = 0;
+         heading = 0;
          temperature = 0;
          time = "";
     }
@@ -99,4 +103,19 @@ public class Reading {
     public void setTime(String time) {
         this.time = time;
     }
+
+    public int getHeading() {
+        return heading;
+    }
+
+    public void setHeading(int heading) {
+        this.heading = heading;
+    }
+
+    public void computeHeading(){
+       // Heading = atan2 (Yout_uT, Xout_uT) * 180 / PI;
+        heading = (int)(Math.atan2(magYValue,magXValue) * (180/Math.PI));
+
+    }
+
 }

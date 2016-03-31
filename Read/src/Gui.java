@@ -30,10 +30,6 @@ public class Gui extends JPanel {
 
     public Gui() {
 
-
-
-
-
         //construct components
         JTabbedPane tabs = new JTabbedPane();
         //Setting layout to Mig Layout
@@ -133,8 +129,8 @@ public class Gui extends JPanel {
 
         //tabs.addTab(OpenF, new fill_Blanks_Tab());
         tabs.addTab("Read Values", tab1);
-        tabs.addTab("Draw Graph", tab2);
-        tabs.addTab("Terrain", tab3);
+        tabs.addTab("Accu Graph", tab2);
+        tabs.addTab("Mag Graph", tab3);
 
         //construct components
         jcomp1 = new JMenuBar();
@@ -204,6 +200,8 @@ public class Gui extends JPanel {
                     Rd.setTemperature(Integer.parseInt(Informaions[6]));
 
                     Rd.setTime("N/A");
+
+                    Rd.computeHeading();
 
                 }catch (Exception e){
                     System.out.println("Failure in String structure");

@@ -12,27 +12,31 @@ import java.util.Random;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class Graph1Draw extends JPanel {
-    private static final int maxReading = 8000;
+public class Graph2Draw extends JPanel {
+    private static final int maxReading = 400;
     private static final int width = 6000;
     private static final int height = 400;
     private static final int borderGap = 30;
     private static final Color XgraphColour = Color.green;
     private static final Color YgraphColour = Color.red;
     private static final Color ZgraphColour = Color.blue;
+    private static final Color HgraphColour = Color.yellow;
     private static final Color GRAPH_POINT_COLOR = new Color(150, 50, 50, 180);
     private static final Stroke stroke = new BasicStroke(2f);
+    private static final Stroke strokeForHeading = new BasicStroke(3f);
     private static final int pointSize = 5;
     private static final int spacerNumber = 11;
-    private static final int bringToPositive = 4000;
+    private static final int bringToPositive = 200;
     private List<Integer> scores;
     private List<Integer> scoresY;
     private List<Integer> scoresZ;
+    private List<Integer> heading;
 
-    public Graph1Draw(List<Integer> scores, List<Integer> scoresY, List<Integer> scoresZ) {
+    public Graph2Draw(List<Integer> scores, List<Integer> scoresY, List<Integer> scoresZ,List<Integer> head) {
         this.scores = scores;
         this.scoresY = scoresY;
         this.scoresZ = scoresZ;
+        this.heading = head;
     }
 
     @Override
@@ -44,19 +48,21 @@ public class Graph1Draw extends JPanel {
         double xScale = ((double) getWidth() - 2 * borderGap) / (scores.size() - 1);
         double yScale = ((double) getHeight() - 2 * borderGap) / (maxReading - 1);
 
-      //  System.out.println(xScale + " xcl "+ yScale + " yxcl");
 
         List<Point> graphPoints = new ArrayList<Point>();
         List<Point> graphPointsY = new ArrayList<Point>();
         List<Point> graphPointsZ = new ArrayList<Point>();
+        List<Point> graphPointshead = new ArrayList<Point>();
         for (int i = 0; i < scores.size(); i++) {
             int x1 = (int) (i * xScale + borderGap);
             int y1 = (int) ((maxReading - scores.get(i)) * yScale + borderGap)  ;
             int y1Y = (int) ((maxReading - scoresY.get(i)) * yScale + borderGap)  ;
             int y1Z = (int) ((maxReading - scoresZ.get(i)) * yScale + borderGap)  ;
+            int y1H = (int) ((maxReading - (heading.get(i) + heading.get(i))) * yScale + borderGap)  ;
             graphPoints.add(new Point(x1, y1- (int) (bringToPositive*yScale)));
             graphPointsY.add(new Point(x1, y1Y- (int) (bringToPositive*yScale)));
             graphPointsZ.add(new Point(x1, y1Z- (int) (bringToPositive*yScale)));
+            graphPointshead.add(new Point(x1, (y1H- (int) (bringToPositive*yScale)) ));
         }
 
         // create x and y axes
@@ -100,6 +106,10 @@ public class Graph1Draw extends JPanel {
         g2.fillRect(borderGap + 5, getHeight()-borderGap-55,20,10);
         g2.drawString("Accelerometer X reading", borderGap + 30, getHeight()-borderGap-45);
 
+        g2.setColor(HgraphColour);
+        g2.fillRect(borderGap + 5, getHeight()-borderGap-75,20,10);
+        g2.drawString("Heading reading", borderGap + 30, getHeight()-borderGap-65);
+
 
         //Draw lines for X axis
         Stroke oldStroke = g2.getStroke();
@@ -130,6 +140,19 @@ public class Graph1Draw extends JPanel {
             int y1 = graphPointsZ.get(i).y;
             int x2 = graphPointsZ.get(i + 1).x;
             int y2 = graphPointsZ.get(i + 1).y;
+            g2.drawLine(x1, y1, x2, y2);
+        }
+
+
+        //Draw lines for Heading line with thicked line
+        oldStroke = g2.getStroke();
+        g2.setColor(HgraphColour);
+        g2.setStroke(strokeForHeading);
+        for (int i = 0; i < graphPointshead.size() - 1; i++) {
+            int x1 = graphPointshead.get(i).x;
+            int y1 = graphPointshead.get(i).y;
+            int x2 = graphPointshead.get(i + 1).x;
+            int y2 = graphPointshead.get(i + 1).y;
             g2.drawLine(x1, y1, x2, y2);
         }
 

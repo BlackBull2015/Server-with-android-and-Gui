@@ -15,18 +15,12 @@ public class Graph1 extends JPanel {
     protected ArrayList<Reading> DataRead = new ArrayList();
     File file;
     JButton jbtn = new JButton("Draw");
-    JPanel draw = new JPanel();
 
 
     public Graph1(){
 
-        draw.setSize(new Dimension(700, 700));
-        setLayout(new MigLayout("", "[]", "[] []"));
-        add(jbtn, "wrap,center");
-        draw.setBackground(Color.black);
-       // add(draw, "grow, push");
-
-
+        setLayout(new MigLayout("", "", ""));
+        add(jbtn, "center, span ,pushx, wrap");
 
 
 
@@ -47,12 +41,8 @@ public class Graph1 extends JPanel {
 
                     }
                     Graph1Draw mainPanel = new Graph1Draw(scores,scoresY,scoresZ);
-
-                    JScrollPane scroll = new JScrollPane (mainPanel,
-                            JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-                 //   mainPanel.setSize(new Dimension(700,350));
-
-
+                    JScrollPane scroll = new JScrollPane (mainPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+                  //  mainPanel.setSize(new Dimension(700,350));
                     add(scroll, "grow, push");
                 }
 
