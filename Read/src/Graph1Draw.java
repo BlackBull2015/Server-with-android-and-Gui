@@ -20,19 +20,18 @@ public class Graph1Draw extends JPanel {
     private static final Color XgraphColour = Color.green;
     private static final Color YgraphColour = Color.red;
     private static final Color ZgraphColour = Color.blue;
-    private static final Color GRAPH_POINT_COLOR = new Color(150, 50, 50, 180);
     private static final Stroke stroke = new BasicStroke(2f);
     private static final int pointSize = 5;
     private static final int spacerNumber = 11;
     private static final int bringToPositive = 4000;
-    private List<Integer> scores;
-    private List<Integer> scoresY;
-    private List<Integer> scoresZ;
+    private List<Integer> AxisX;
+    private List<Integer> AxisY;
+    private List<Integer> AxisZ;
 
-    public Graph1Draw(List<Integer> scores, List<Integer> scoresY, List<Integer> scoresZ) {
-        this.scores = scores;
-        this.scoresY = scoresY;
-        this.scoresZ = scoresZ;
+    public Graph1Draw(List<Integer> AxisX, List<Integer> AxisY, List<Integer> AxisZ) {
+        this.AxisX = AxisX;
+        this.AxisY = AxisY;
+        this.AxisZ = AxisZ;
     }
 
     @Override
@@ -41,7 +40,7 @@ public class Graph1Draw extends JPanel {
         Graphics2D g2 = (Graphics2D)g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        double xScale = ((double) getWidth() - 2 * borderGap) / (scores.size() - 1);
+        double xScale = ((double) getWidth() - 2 * borderGap) / (AxisX.size() - 1);
         double yScale = ((double) getHeight() - 2 * borderGap) / (maxReading - 1);
 
       //  System.out.println(xScale + " xcl "+ yScale + " yxcl");
@@ -49,11 +48,11 @@ public class Graph1Draw extends JPanel {
         List<Point> graphPoints = new ArrayList<Point>();
         List<Point> graphPointsY = new ArrayList<Point>();
         List<Point> graphPointsZ = new ArrayList<Point>();
-        for (int i = 0; i < scores.size(); i++) {
+        for (int i = 0; i < AxisX.size(); i++) {
             int x1 = (int) (i * xScale + borderGap);
-            int y1 = (int) ((maxReading - scores.get(i)) * yScale + borderGap)  ;
-            int y1Y = (int) ((maxReading - scoresY.get(i)) * yScale + borderGap)  ;
-            int y1Z = (int) ((maxReading - scoresZ.get(i)) * yScale + borderGap)  ;
+            int y1 = (int) ((maxReading - AxisX.get(i)) * yScale + borderGap)  ;
+            int y1Y = (int) ((maxReading - AxisY.get(i)) * yScale + borderGap)  ;
+            int y1Z = (int) ((maxReading - AxisZ.get(i)) * yScale + borderGap)  ;
             graphPoints.add(new Point(x1, y1- (int) (bringToPositive*yScale)));
             graphPointsY.add(new Point(x1, y1Y- (int) (bringToPositive*yScale)));
             graphPointsZ.add(new Point(x1, y1Z- (int) (bringToPositive*yScale)));
@@ -80,8 +79,8 @@ public class Graph1Draw extends JPanel {
         }
 
         // and for x axis
-        for (int i = 0; i < scores.size() - 1; i++) {
-            int x0 = (i + 1) * (getWidth() - borderGap * 2) / (scores.size() - 1) + borderGap;
+        for (int i = 0; i < AxisX.size() - 1; i++) {
+            int x0 = (i + 1) * (getWidth() - borderGap * 2) / (AxisX.size() - 1) + borderGap;
             int x1 = x0;
             int y0 = getHeight() - borderGap;
             int y1 = y0 - pointSize;
@@ -132,47 +131,10 @@ public class Graph1Draw extends JPanel {
             int y2 = graphPointsZ.get(i + 1).y;
             g2.drawLine(x1, y1, x2, y2);
         }
-
-
-//        g2.setStroke(oldStroke);
-//        g2.setColor(GRAPH_POINT_COLOR);
-//        for (int i = 0; i < graphPoints.size(); i++) {
-//            int x = graphPoints.get(i).x - pointSize / 2;
-//            int y = graphPoints.get(i).y - pointSize / 2;;
-//            int ovalW = pointSize;
-//            int ovalH = pointSize;
-//            g2.fillOval(x, y, ovalW, ovalH);
-//        }
     }
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(width, height);
     }
-//
-//    private static void createAndShowGui() {
-//        List<Integer> scores = new ArrayList<Integer>();
-//        Random random = new Random();
-//        int maxDataPoints = 16;
-//        int maxScore = 20;
-//        for (int i = 0; i < maxDataPoints ; i++) {
-//            scores.add(random.nextInt(maxScore));
-//        }
-//        Graph1Draw mainPanel = new Graph1Draw(scores);
-//
-//        JFrame frame = new JFrame("DrawGraph");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.getContentPane().add(mainPanel);
-//        frame.pack();
-//        frame.setLocationByPlatform(true);
-//        frame.setVisible(true);
-//    }
-//
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                createAndShowGui();
-//            }
-//        });
-//    }
 }

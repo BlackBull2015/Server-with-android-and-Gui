@@ -17,10 +17,8 @@ public class Graph3Draw extends JPanel {
     private static final int width = 6000;
     private static final int height = 400;
     private static final int borderGap = 30;
-    private static final Color XgraphColour = Color.green;
-    private static final Color YgraphColour = Color.red;
-    private static final Color ZgraphColour = Color.blue;
-
+    private static final int pointSize = 4;
+    private static final int spacerNumber = 11;
     int[][] DisplayPattern = new int[][]{
             { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 },
             { 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 },
@@ -29,25 +27,14 @@ public class Graph3Draw extends JPanel {
             { 1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9 },
             { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
     };
-
-    ArrayList<Color> allColors;
-
-    private static final Stroke stroke = new BasicStroke(2f);
-    private static final int pointSize = 4;
-    private static final int spacerNumber = 11;
-    //private static final int bringToPositive = 4000;
     protected ArrayList<Reading> DataRead = new ArrayList();
-
+    ArrayList<Color> allColors;
     public Graph3Draw(ArrayList<Reading> data) {
         this.DataRead = data;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
-
-
-
-
         allColors = DeclareAllColors();
 
         super.paintComponent(g);
@@ -287,6 +274,15 @@ public class Graph3Draw extends JPanel {
             return 1;
         else
             return 0;
+            /*
+        Drawing patterns
+1 = Y,Y,Y,Y,Y,Y,Y,Y,Y,Y;
+2 = g1,Y,Y,Y,Y,Y,Y,Y,Y,r1;
+3 = g2,g1,Y,Y,Y,Y,Y,Y,r1,r2;
+4 = g3,g2,g1,Y,Y,Y,Y,r1,r2,r3;
+5 = g4,g3,g2,g1,Y,Y,r1,r2,r3,r4;
+6 = g5,g4,g3,g2,g1,r1,r2,r3,r4,r5;
+ */
     }
 
 
@@ -304,61 +300,23 @@ public class Graph3Draw extends JPanel {
         cls.add(new Color(255, 105, 0));
         cls.add(new Color(255, 55, 0));
         cls.add(new Color(255, 5, 0));
-
+     /* Color RGB settings
+        5	255	0
+        55	255	0
+        105	255	0
+        155	255	0
+        205	255	0
+        255	255	0
+        255	205	0
+        255	155	0
+        255	105	0
+        255	55	0
+        255	5	0*/
         return cls;
     }
-
-
-
-
-
-/*
-
-1 = Y,Y,Y,Y,Y,Y,Y,Y,Y,Y;
-2 = g1,Y,Y,Y,Y,Y,Y,Y,Y,r1;
-3 = g2,g1,Y,Y,Y,Y,Y,Y,r1,r2;
-4 = g3,g2,g1,Y,Y,Y,Y,r1,r2,r3;
-5 = g4,g3,g2,g1,Y,Y,r1,r2,r3,r4;
-6 = g5,g4,g3,g2,g1,r1,r2,r3,r4,r5;
-
-
-
-
-
-
- */
-
-
-
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(width, height);
     }
-//
-//    private static void createAndShowGui() {
-//        List<Integer> scores = new ArrayList<Integer>();
-//        Random random = new Random();
-//        int maxDataPoints = 16;
-//        int maxScore = 20;
-//        for (int i = 0; i < maxDataPoints ; i++) {
-//            scores.add(random.nextInt(maxScore));
-//        }
-//        Graph1Draw mainPanel = new Graph1Draw(scores);
-//
-//        JFrame frame = new JFrame("DrawGraph");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.getContentPane().add(mainPanel);
-//        frame.pack();
-//        frame.setLocationByPlatform(true);
-//        frame.setVisible(true);
-//    }
-//
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                createAndShowGui();
-//            }
-//        });
-//    }
 }

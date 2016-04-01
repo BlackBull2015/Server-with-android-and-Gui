@@ -54,10 +54,6 @@
                 <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
                 <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
                 <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-                <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-                <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-                <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-                <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
               </folding>
             </state>
           </provider>
@@ -76,27 +72,14 @@
       <file leaf-file-name="Graph3Draw.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph3Draw.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.391453">
-              <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.6683761">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding>
-                <element signature="e#311#338#0" expanded="true" />
-                <element signature="e#1429#1430#0" expanded="true" />
-                <element signature="e#1465#1466#0" expanded="true" />
-                <element signature="e#2032#2039#0" expanded="true" />
-                <element signature="e#2150#2157#0" expanded="true" />
-                <element signature="e#17017#17018#0" expanded="true" />
-                <element signature="e#17068#17069#0" expanded="true" />
+                <element signature="e#1733#1740#0" expanded="true" />
+                <element signature="e#1851#1858#0" expanded="true" />
+                <element signature="e#17469#17470#0" expanded="true" />
+                <element signature="e#17520#17521#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Colors.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Colors.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -119,7 +102,7 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93a50970-7043-406f-8fb5-15b00e982dae/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9666667">
+            <state vertical-scroll-proportion="0.0">
               <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
             </state>
@@ -139,9 +122,28 @@
       <file leaf-file-name="Graph1Draw.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graph1Draw.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
-              <folding />
+            <state vertical-scroll-proportion="-3.310345">
+              <caret line="82" column="69" selection-start-line="82" selection-start-column="69" selection-end-line="82" selection-end-column="69" />
+              <folding>
+                <element signature="e#1732#1739#0" expanded="true" />
+                <element signature="e#1791#1798#0" expanded="true" />
+                <element signature="e#1850#1857#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph2Draw.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Graph2Draw.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.6896552">
+              <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+              <folding>
+                <element signature="e#1879#1886#0" expanded="true" />
+                <element signature="e#1938#1945#0" expanded="true" />
+                <element signature="e#1997#2004#0" expanded="true" />
+                <element signature="e#2059#2066#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,14 +167,14 @@
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/93a50970-7043-406f-8fb5-15b00e982dae/console.sql" />
         <option value="$PROJECT_DIR$/src/Reading.java" />
-        <option value="$PROJECT_DIR$/src/Graph2Draw.java" />
-        <option value="$PROJECT_DIR$/src/Graph1Draw.java" />
         <option value="$PROJECT_DIR$/src/Graph1.java" />
         <option value="$PROJECT_DIR$/src/PrintVals.java" />
         <option value="$PROJECT_DIR$/src/Graph2.java" />
         <option value="$PROJECT_DIR$/src/Graph3.java" />
         <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/Colors.java" />
+        <option value="$PROJECT_DIR$/src/Graph2Draw.java" />
+        <option value="$PROJECT_DIR$/src/Graph1Draw.java" />
         <option value="$PROJECT_DIR$/src/Graph3Draw.java" />
       </list>
     </option>
@@ -213,8 +215,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,7 +249,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -538,9 +540,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Unknown" factoryName="Unknown">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -597,19 +596,19 @@
       <workItem from="1459463987593" duration="103000" />
       <workItem from="1459504752506" duration="1245000" />
       <workItem from="1459534391023" duration="7590000" />
+      <workItem from="1459550988838" duration="264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32968000" />
+    <option name="totallyTimeSpent" value="33232000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -618,7 +617,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.093797274" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15960665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09531014" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -629,6 +628,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33835846" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -656,6 +656,18 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Graph1Draw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+          <folding>
+            <element signature="e#1732#1739#0" expanded="true" />
+            <element signature="e#1791#1798#0" expanded="true" />
+            <element signature="e#1850#1857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -690,10 +702,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -702,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,10 +754,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -759,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,10 +806,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -816,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,10 +858,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -873,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,10 +910,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -930,7 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,10 +955,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -980,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,10 +1000,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -1030,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,10 +1045,6 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -1080,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,13 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5952381">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graph2Draw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1143,25 +1108,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Colors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PrintVals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53911203">
           <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93a50970-7043-406f-8fb5-15b00e982dae/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9666667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding />
         </state>
@@ -1177,14 +1133,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graph1Draw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,26 +1154,44 @@
             <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
-            <marker date="1459535427524" expanded="true" signature="7585:7738" placeholder="INSERT INTO ..." />
-            <marker date="1459535427524" expanded="true" signature="10112:10138" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459535427524" expanded="true" signature="11911:11944" placeholder="drop TABLE I..." />
-            <marker date="1459535427524" expanded="true" signature="12076:12848" placeholder="create table..datareadings..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph2Draw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6896552">
+          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+          <folding>
+            <element signature="e#1879#1886#0" expanded="true" />
+            <element signature="e#1938#1945#0" expanded="true" />
+            <element signature="e#1997#2004#0" expanded="true" />
+            <element signature="e#2059#2066#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph1Draw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.310345">
+          <caret line="82" column="69" selection-start-line="82" selection-start-column="69" selection-end-line="82" selection-end-column="69" />
+          <folding>
+            <element signature="e#1732#1739#0" expanded="true" />
+            <element signature="e#1791#1798#0" expanded="true" />
+            <element signature="e#1850#1857#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph3Draw.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.391453">
-          <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.6683761">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
           <folding>
-            <element signature="e#311#338#0" expanded="true" />
-            <element signature="e#1429#1430#0" expanded="true" />
-            <element signature="e#1465#1466#0" expanded="true" />
-            <element signature="e#2032#2039#0" expanded="true" />
-            <element signature="e#2150#2157#0" expanded="true" />
-            <element signature="e#17017#17018#0" expanded="true" />
-            <element signature="e#17068#17069#0" expanded="true" />
+            <element signature="e#1733#1740#0" expanded="true" />
+            <element signature="e#1851#1858#0" expanded="true" />
+            <element signature="e#17469#17470#0" expanded="true" />
+            <element signature="e#17520#17521#0" expanded="true" />
           </folding>
         </state>
       </provider>
