@@ -49,6 +49,7 @@ public class Gui extends JPanel {
         PrintVals tab1 = new PrintVals();
         Graph1 tab2 = new Graph1();
         Graph2 tab3 = new Graph2();
+        Graph3 tab4 = new Graph3();
 
         //Action listiner for each menu bar
         q1.addActionListener(new ActionListener() {
@@ -60,6 +61,7 @@ public class Gui extends JPanel {
                tab1.SetFile(fl);
                tab2.SetFile(fl);
                tab3.SetFile(fl);
+               tab4.SetFile(fl);
 
                tabs.setSelectedIndex(0);
            }
@@ -74,6 +76,7 @@ public class Gui extends JPanel {
                     tab1.setData(DataReadMain);
                     tab2.setData(DataReadMain);
                     tab3.setData(DataReadMain);
+                    tab4.setData(DataReadMain);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -103,6 +106,7 @@ public class Gui extends JPanel {
                 tab1.setData(DataReadMain);
                 tab2.setData(DataReadMain);
                 tab3.setData(DataReadMain);
+                tab4.setData(DataReadMain);
             }
         });
         q5.addActionListener(new ActionListener() {
@@ -131,6 +135,7 @@ public class Gui extends JPanel {
         tabs.addTab("Read Values", tab1);
         tabs.addTab("Accu Graph", tab2);
         tabs.addTab("Mag Graph", tab3);
+        tabs.addTab("Terrain", tab4);
 
         //construct components
         jcomp1 = new JMenuBar();
