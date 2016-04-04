@@ -9,10 +9,13 @@ import java.awt.Stroke;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class Graph2Draw extends JPanel {
+    private static final Logger log= Logger.getLogger(Graph2Draw.class.getName());
     private static final int maxReading = 400;
     private static final int width = 6000;
     private static final int height = 400;
@@ -36,6 +39,7 @@ public class Graph2Draw extends JPanel {
         this.AxisY = AxisY;
         this.AxisZ = AxisZ;
         this.heading = head;
+        log.log(Level.INFO,"Data passed to object");
     }
 
     @Override
@@ -63,7 +67,7 @@ public class Graph2Draw extends JPanel {
             graphPointsZ.add(new Point(x1, y1Z- (int) (bringToPositive*yScale)));
             graphPointshead.add(new Point(x1, (y1H- (int) (bringToPositive*yScale)) ));
         }
-
+        log.log(Level.INFO,"Points Created");
         // create x and y axes
         g2.drawLine(borderGap, getHeight() - borderGap, borderGap, borderGap);
         g2.drawLine(borderGap, getHeight() - borderGap, getWidth() - borderGap, getHeight() - borderGap);
@@ -92,24 +96,25 @@ public class Graph2Draw extends JPanel {
             int y1 = y0 - pointSize;
             g2.drawLine(x0, y0, x1, y1);
         }
+        log.log(Level.INFO,"Spacers created");
         //Draw legend for graph
         g2.setColor(ZgraphColour);
         g2.fillRect(borderGap + 5, getHeight() - borderGap - 15, 20, 10);
-        g2.drawString("Accelerometer Z reading", borderGap + 30, getHeight() - borderGap -5);
+        g2.drawString("Accelerometer Z reading", borderGap + 30, getHeight() - borderGap - 5);
 
         g2.setColor(YgraphColour);
         g2.fillRect(borderGap + 5, getHeight() - borderGap - 35, 20, 10);
         g2.drawString("Accelerometer Y reading", borderGap + 30, getHeight() - borderGap - 25);
 
         g2.setColor(XgraphColour);
-        g2.fillRect(borderGap + 5, getHeight()-borderGap-55,20,10);
-        g2.drawString("Accelerometer X reading", borderGap + 30, getHeight()-borderGap-45);
+        g2.fillRect(borderGap + 5, getHeight() - borderGap - 55, 20, 10);
+        g2.drawString("Accelerometer X reading", borderGap + 30, getHeight() - borderGap - 45);
 
         g2.setColor(HgraphColour);
-        g2.fillRect(borderGap + 5, getHeight()-borderGap-75,20,10);
-        g2.drawString("Heading reading", borderGap + 30, getHeight()-borderGap-65);
+        g2.fillRect(borderGap + 5, getHeight() - borderGap - 75, 20, 10);
+        g2.drawString("Heading reading", borderGap + 30, getHeight() - borderGap - 65);
 
-
+        log.log(Level.INFO, "Legend Created");
         //Draw lines for X axis
         Stroke oldStroke = g2.getStroke();
         g2.setColor(XgraphColour);
@@ -154,6 +159,7 @@ public class Graph2Draw extends JPanel {
             int y2 = graphPointshead.get(i + 1).y;
             g2.drawLine(x1, y1, x2, y2);
         }
+        log.log(Level.INFO,"Lines for graph drawn");
     }
 
     @Override

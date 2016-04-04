@@ -7,11 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Eric on 3/23/2016.
  */
 public class Graph1 extends JPanel {
+    private static final Logger log= Logger.getLogger(Graph1.class.getName());
     protected ArrayList<Reading> DataRead = new ArrayList();
     File file;
     JButton jbtn = new JButton("Draw");
@@ -28,6 +31,7 @@ public class Graph1 extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                log.log(Level.INFO,"Attempting to draw data");
                 if(!DataRead.isEmpty()){
                     java.util.List<Integer> scores = new ArrayList<Integer>();
                     java.util.List<Integer> scoresY = new ArrayList<Integer>();
@@ -44,61 +48,15 @@ public class Graph1 extends JPanel {
                     JScrollPane scroll = new JScrollPane (mainPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
                   //  mainPanel.setSize(new Dimension(700,350));
                     add(scroll, "grow, push");
-                }
+                    log.log(Level.INFO,"Data drawn");
+                }else
+                    log.log(Level.WARNING,"Unable to create, no points to draw from");
+
 
 
             }
         });
-
-
-
-
-
     }
-
-    public void drawLineGraph(Graphics g)
-    {
-        int i, x1, y1, x2, y2, largestNumber, xIncrement, yIncrement;
-        //Compute the x and y increments
-        largestNumber = 20;
-        xIncrement = 5;
-
-        //Set the initial origin point
-        x1 = 0;
-        y1 = 0;
-
-        //Compute and plot the data points
-        for(i=0; i < 10; i++)
-        {
-            x2 = 5;
-            y2 = 7;
-            g.fillOval(x2, y2, 5, 5);
-            g.drawLine(x1, y1, x2, y2);
-            x1 = x2;
-            y1 = y2;
-
-            x2 = x2 +2;
-            y2 = y2 +3;
-        }
-    }
-
- //   private JPanel createAndShowGui() {
-//        java.util.List<Integer> scores = new ArrayList<Integer>();
-//        Random random = new Random();
-//        int maxDataPoints = 16;
-//        int maxScore = 20;
-//        for (int i = 0; i < maxDataPoints ; i++) {
-//            scores.add(random.nextInt(maxScore));
-//        }
-//        Graph1Draw mainPanel = new Graph1Draw(scores);
-//
-//        jpl.add(mainPanel);
-//
-//        jpl.setVisible(true);
-//        jpl
-//        return jpl;
-  //  }
-
     public void setData(ArrayList a) {DataRead = a;}
     public void SetFile(File f){
         file = f;

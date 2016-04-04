@@ -9,10 +9,13 @@ import java.awt.Stroke;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class Graph3Draw extends JPanel {
+    private static final Logger log= Logger.getLogger(Graph3Draw.class.getName());
     private static final int maxReading = 200;
     private static final int width = 6000;
     private static final int height = 400;
@@ -61,6 +64,7 @@ public class Graph3Draw extends JPanel {
             graphPointsY.add(new Point(x1, y1Y));
             graphPointsZ.add(new Point(x1, y1Z));
         }
+        log.log(Level.INFO,"Points created");
 
         // create x and y axes
         g2.drawLine(borderGap, getHeight() - borderGap, borderGap, borderGap);
@@ -89,7 +93,7 @@ public class Graph3Draw extends JPanel {
             g2.drawLine(x0, y0, x1, y1);
         }
 
-
+        log.log(Level.INFO,"Spacers created");
         //Draw legend for graph
         g2.setColor(Color.green);
         g2.fillRect(borderGap + 5, getHeight() - borderGap - 15, 20, 10);
@@ -113,6 +117,7 @@ public class Graph3Draw extends JPanel {
         g2.setColor(Color.black);
         g2.drawString("Z axis Orientation UPSIDE DOWN", borderGap + 30, getHeight() - borderGap - 65);
 
+        log.log(Level.INFO,"Legend created");
 
 
         /************************************************************************************************
@@ -162,6 +167,7 @@ public class Graph3Draw extends JPanel {
                 g2.setColor(allColors.get(DisplayPattern[patternNum][0]));                g2.fillRect(x, y - pointSize * 5, ovalW, ovalH);
             }
         }
+        log.log(Level.INFO,"X Axis created");
         /************************************************************************************************
          *                  Drawing for Y axis
          *************************************************************************************************/
@@ -209,6 +215,7 @@ public class Graph3Draw extends JPanel {
                 g2.setColor(allColors.get(DisplayPattern[patternNum][0]));                g2.fillRect(x, y - pointSize * 5, ovalW, ovalH);
             }
         }
+        log.log(Level.INFO,"Y axis created");
         /************************************************************************************************
          *                  Drawing for Z axis
          *************************************************************************************************/
@@ -256,6 +263,7 @@ public class Graph3Draw extends JPanel {
                 g2.setColor(allColors.get(DisplayPattern[patternNum][0]));                g2.fillRect(x, y - pointSize * 5, ovalW, ovalH);
             }
         }
+        log.log(Level.INFO,"Z axis created");
     }
 
 

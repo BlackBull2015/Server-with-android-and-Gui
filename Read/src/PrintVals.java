@@ -1,16 +1,18 @@
 import net.miginfocom.swing.MigLayout;
 
-import javax.sound.midi.MidiDevice;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Eric on 3/23/2016.
  */
 public class PrintVals extends JPanel {
+    private static final Logger log= Logger.getLogger(PrintVals.class.getName());
 
     protected ArrayList<Reading> DataRead = new ArrayList();
 
@@ -34,7 +36,9 @@ public class PrintVals extends JPanel {
 
                     try {
                         addToArea();
+                        log.log(Level.INFO,"Data have been printed");
                     } catch (IOException e1) {
+                        log.log(Level.WARNING,"Unable to display data.");
                         e1.printStackTrace();
                     }
                 }
@@ -46,13 +50,18 @@ public class PrintVals extends JPanel {
     public void addToArea() throws IOException {
         int size, count = 0;
 
-        size = DataRead.size();
-        System.out.println("Size is: " + size);
-        while (count < size) {
-            area.append(count + ":  " +DataRead.get(count).toString());
-            area.append("\n");
-            count++;
+        if(!DataRead.isEmpty()) {
+            size = DataRead.size();
+            System.out.println("Size is: " + size);
+            area.setText("");
+            while (count < size) {
+                area.append(count + ":  " + DataRead.get(count).toString());
+                area.append("\n");
+                count++;
+            }
         }
+        else
+            log.log(Level.WARNING,"Data points was empty");
     }
 
     public void setData(ArrayList a) {DataRead = a;}

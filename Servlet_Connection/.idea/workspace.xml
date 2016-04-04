@@ -78,14 +78,14 @@
       </file>
       <file leaf-file-name="main.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding />
             </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -583,11 +583,12 @@
       <workItem from="1459098311606" duration="4207000" />
       <workItem from="1459246580404" duration="1657000" />
       <workItem from="1459427445225" duration="23000" />
+      <workItem from="1459780300036" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37517000" />
+    <option name="totallyTimeSpent" value="38112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
@@ -600,7 +601,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30936456" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -620,6 +620,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -667,14 +668,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -711,14 +712,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -755,14 +756,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -799,14 +800,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -843,15 +844,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -879,14 +880,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -915,14 +916,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -959,14 +960,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Servlet_Connection/main.java">
@@ -988,14 +989,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
@@ -1007,14 +1008,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/loan_calculator.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1036,14 +1037,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/loan_calculator.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
@@ -1088,14 +1089,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
   </component>

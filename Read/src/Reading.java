@@ -31,12 +31,12 @@ public class Reading {
 
     public String toString(){
         return "Reading is: Acc: X="+accXValue+" Y="+accYValue+" Z="+accZValue+" Mag: X="+magXValue+" Y="+magYValue+
-                " Z="+magZValue+" and Temp: "+temperature;
+                " Z="+magZValue+", Temp: "+temperature +" and reading was done at: "+time;
     }
 
     public String toStringDb(){
         return accXValue+" "+accYValue+" "+accZValue+" "+magXValue+" "+magYValue+
-                " "+magZValue+" "+temperature;
+                " "+magZValue+" "+temperature+" "+time;
     }
 
 

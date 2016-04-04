@@ -2,7 +2,9 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
@@ -46,6 +48,11 @@ public class MinMax extends HttpServlet {
             try{
                 File fl = new File("C:/temp/base.txt");
                 PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fl,true)));
+               String time;
+                Calendar cal = Calendar.getInstance();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd-HH:mm:ss");
+                time = sdf.format(cal.getTime());
+
 
                 out.print(array[0]+ " ");
                 out.print(array[1]+ " ");
@@ -53,7 +60,8 @@ public class MinMax extends HttpServlet {
                 out.print(array[3]+ " ");
                 out.print(array[4]+ " ");
                 out.print(array[5]+ " ");
-                out.println(array[6]+ " ");
+                out.print(array[6]+ " ");
+                out.println(time+ " ");
                 out.close();
 
             }catch (IOException e) {

@@ -1,18 +1,19 @@
 import net.miginfocom.swing.MigLayout;
 
+import javax.sound.midi.MidiDevice;
 import javax.swing.*;
 import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Gui extends JPanel {
+    private static final Logger log= Logger.getLogger(Gui.class.getName());
     private PreparedStatement sqlUpdate;
    // protected ArrayList<Reading> Data = new ArrayList();
    protected ArrayList<Reading> DataReadMain = new ArrayList();
@@ -25,6 +26,7 @@ public class Gui extends JPanel {
     private static String SaveInDb = "Database Save";
     private static String exit = "Exit";
     private static String ClearDb = "ClearDb";
+    private static String ClearFl = "ClearFl";
 
     private JMenuBar jcomp1;
 
@@ -37,7 +39,7 @@ public class Gui extends JPanel {
 
         //construct preComponents of File menu
         JMenu fileMenu = new JMenu ("File");
-        JMenu Database = new JMenu("Database");
+        JMenu Database = new JMenu("Operate");
 
         JMenuItem q1 = new JMenuItem (OpenF);
         JMenuItem q2 = new JMenuItem (Craft);
@@ -45,27 +47,34 @@ public class Gui extends JPanel {
         JMenuItem q5 = new JMenuItem(SaveInDb);
         JMenuItem q3 = new JMenuItem (exit);
         JMenuItem d1 = new JMenuItem (ClearDb);
+        JMenuItem d2 = new JMenuItem (ClearFl);
+        log.log(Level.INFO,"Menu created");
 
         PrintVals tab1 = new PrintVals();
         Graph1 tab2 = new Graph1();
         Graph2 tab3 = new Graph2();
         Graph3 tab4 = new Graph3();
+        log.log(Level.INFO,"Tabs Created");
 
         //Action listiner for each menu bar
+        //Select file
         q1.addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
                JFileChooser jfc = new JFileChooser();
                jfc.showOpenDialog(jfc);
                fl = jfc.getSelectedFile();
+               log.log(Level.INFO, "File Opened");
                tab1.SetFile(fl);
                tab2.SetFile(fl);
                tab3.SetFile(fl);
                tab4.SetFile(fl);
+               log.log(Level.INFO, "File shared to others");
+             //  tabs.setSelectedIndex(0);
 
-               tabs.setSelectedIndex(0);
            }
        });
+        //Create data from points
         q2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,10 +82,12 @@ public class Gui extends JPanel {
               //  DataReadMain = tab1.DataRead;
                 try {
                     DataReadMain = CreateData(fl);
+                    log.log(Level.INFO,"Points Created");
                     tab1.setData(DataReadMain);
                     tab2.setData(DataReadMain);
                     tab3.setData(DataReadMain);
                     tab4.setData(DataReadMain);
+                    log.log(Level.INFO, "Data shared");
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -93,32 +104,56 @@ public class Gui extends JPanel {
              //   tabs.setSelectedIndex(1);
             }
         });
+        //Exits program
         q3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                log.log(Level.INFO,"Good Bye");
                 System.exit(1);
             }
         });
+        //Create data points from Database
         q4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CreatePointsFromDb();
+                log.log(Level.INFO, "File created from database");
                 tab1.setData(DataReadMain);
                 tab2.setData(DataReadMain);
                 tab3.setData(DataReadMain);
                 tab4.setData(DataReadMain);
+                log.log(Level.INFO, "points shared with others");
             }
         });
+        //Saves all points in the database
         q5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 saveInDb();
+
+                log.log(Level.INFO, "Saved in database");
             }
         });
+        //Resets all database
         d1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ResetDatabase();
+                log.log(Level.INFO, "Database Restarted");
+            }
+        });
+        //Clear the selected file
+        d2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(fl!= null){
+                    try {
+                        ResetDataFile(fl);
+                        log.log(Level.INFO, "File restarted");
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
         });
 
@@ -130,12 +165,14 @@ public class Gui extends JPanel {
         fileMenu.add(q3);
 
         Database.add(d1);
-
+        Database.add(d2);
+        log.log(Level.INFO, "Menu items added");
         //tabs.addTab(OpenF, new fill_Blanks_Tab());
         tabs.addTab("Read Values", tab1);
         tabs.addTab("Accu Graph", tab2);
         tabs.addTab("Mag Graph", tab3);
         tabs.addTab("Terrain", tab4);
+        log.log(Level.INFO, "Tabs Added");
 
         //construct components
         jcomp1 = new JMenuBar();
@@ -144,6 +181,7 @@ public class Gui extends JPanel {
         //Adding components to panel
         add(jcomp1," growx,wrap,top");
         add(tabs,"grow,push");
+        log.log(Level.INFO, "Jpanel created");
     }
 
     protected ArrayList CreateData(File f) throws IOException {
@@ -168,7 +206,12 @@ public class Gui extends JPanel {
 
                     Rd.setTemperature(Integer.parseInt(Informaions[6]));
 
-                    Rd.setTime("N/A");
+                    System.out.println(Informaions.length);
+
+                    if(Informaions.length > 7)
+                      Rd.setTime(Informaions[7]);
+                    else
+                      Rd.setTime("N/A");
 
                     DataRead.add(Rd);
                 }catch (Exception e){
@@ -204,7 +247,10 @@ public class Gui extends JPanel {
 
                     Rd.setTemperature(Integer.parseInt(Informaions[6]));
 
-                    Rd.setTime("N/A");
+                    if(Informaions.length > 6)
+                        Rd.setTime(Informaions[7]);
+                    else
+                        Rd.setTime("N/A");
 
                     Rd.computeHeading();
 
@@ -250,7 +296,7 @@ public class Gui extends JPanel {
                         sqlUpdate.setInt(5, Integer.parseInt(IntoSql[4]));
                         sqlUpdate.setInt(6, Integer.parseInt(IntoSql[5]));
                         sqlUpdate.setInt(7, Integer.parseInt(IntoSql[6]));
-                        sqlUpdate.setString(8, "N/A");
+                        sqlUpdate.setString(8, IntoSql[7]);
                         result = sqlUpdate.executeUpdate();
                         // if insert fails, rollback and discontinue
                         if ( result == 0 ) {
@@ -364,6 +410,13 @@ public class Gui extends JPanel {
         }
     }
 
+    private void ResetDataFile(File f) throws IOException {
+
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fl,false)));
+        out.print("");
+        out.flush();
+        out.close();
+    }
 
 
     public static void main (String[] args) {
@@ -372,12 +425,14 @@ public class Gui extends JPanel {
         }catch(Exception e){
             e.printStackTrace();
         }
+        log.log(Level.INFO,"Starting Program");
         JFrame frame = new JFrame ("MyPanel");
         frame.setLayout(new MigLayout("", "[] "));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(new Gui(), "push,grow ");
         frame.pack();
-        frame.setSize(new Dimension(700,700));
-        frame.setVisible (true);
+        frame.setSize(new Dimension(700, 700));
+        frame.setVisible(true);
+        log.log(Level.INFO, "Program running");
     }
 }

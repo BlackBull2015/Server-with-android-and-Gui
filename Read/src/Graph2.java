@@ -6,11 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Eric on 3/23/2016.
  */
 public class Graph2 extends JPanel {
+    private static final Logger log= Logger.getLogger(Graph2.class.getName());
     protected ArrayList<Reading> DataRead = new ArrayList();
     File file;
     JButton jbtn = new JButton("Draw");
@@ -36,6 +39,7 @@ public class Graph2 extends JPanel {
                         Heading.add(DataRead.get(i).getHeading());
 
                     }
+                    log.log(Level.INFO,"Data to send created");
                     Graph2Draw mainPanel = new Graph2Draw(Xaxis,Yaxis,Zaxis,Heading);
 
                     JScrollPane scroll = new JScrollPane (mainPanel,
@@ -44,6 +48,7 @@ public class Graph2 extends JPanel {
 
 
                     add(scroll, "grow, push");
+                    log.log(Level.INFO,"Graph created");
                 }
             }
         });
