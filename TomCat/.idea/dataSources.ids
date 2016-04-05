@@ -6,40 +6,18 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="books"/>
-    <table name="authorisbn" schema="" catalog="books" type="TABLE">
-      <column name="authorID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="isbn" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <foreign-key name="fk_authorISBN_1" columns="authorID" ref-table="authors" ref-schema="" ref-catalog="books" ref-columns="authorID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_authorISBN_2" columns="isbn" ref-table="titles" ref-schema="" ref-catalog="books" ref-columns="isbn" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="fk_authorISBN_1" unique="false" columns="authorID"/>
-      <index name="fk_authorISBN_2" unique="false" columns="isbn"/>
-    </table>
-    <table name="authors" schema="" catalog="books" type="TABLE">
-      <column name="authorID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="firstName" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="lastName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="authorID"/>
-      <exported-key name="fk_authorISBN_1" table="authorisbn" schema="" catalog="books" columns="authorID"/>
-    </table>
-    <table name="publishers" schema="" catalog="books" type="TABLE">
-      <column name="publisherID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="publisherName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="publisherID"/>
-      <exported-key name="fk_titles" table="titles" schema="" catalog="books" columns="publisherID"/>
-    </table>
-    <table name="titles" schema="" catalog="books" type="TABLE">
-      <column name="isbn" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="editionNumber" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="copyright" sqlType="VARCHAR" precision="4" scale="0" nullable="false" jdbcType="12"/>
-      <column name="publisherID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="imageFile" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
-      <primary-key name="PRIMARY" columns="isbn"/>
-      <foreign-key name="fk_titles" columns="publisherID" ref-table="publishers" ref-schema="" ref-catalog="books" ref-columns="publisherID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_authorISBN_2" table="authorisbn" schema="" catalog="books" columns="isbn"/>
-      <index name="fk_titles" unique="false" columns="publisherID"/>
+    <schema name="" catalog="readings"/>
+    <table name="datareadings" schema="" catalog="readings" type="TABLE">
+      <column name="tableID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="accX" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="accY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="accZ" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="magX" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="magY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="magZ" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tmp" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="time" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="tableID"/>
     </table>
   </data-source>
 </component>

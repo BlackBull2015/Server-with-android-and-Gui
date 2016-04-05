@@ -15,12 +15,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>LoanCalculator</servlet-name>
-        <servlet-class>LoanCalculator</servlet-class>
+        <servlet-name>Display</servlet-name>
+        <servlet-class>Display</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoanCalculator</servlet-name>
-        <url-pattern>/LoanCalculator</url-pattern>
+        <servlet-name>Display</servlet-name>
+        <url-pattern>/Display</url-pattern>
     </servlet-mapping>
 
 </web-app>
