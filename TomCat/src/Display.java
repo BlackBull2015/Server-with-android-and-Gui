@@ -17,13 +17,24 @@ public class Display extends HttpServlet {
 
         ArrayList<Reading> DataGraph;
         DataGraph = CreateData(new File("C://temp/base.txt"));
-        String arrays = "[";
+        String arrayX = "[";
+        String arrayY = "[";
+        String arrayZ = "[";
+        String arrayTmp = "[";
 
-        int[] array= new int[DataGraph.size()];
+
+
         for (int i = 0; i < DataGraph.size(); i++){
-            arrays+= DataGraph.get(i).getAccXValue() + ", ";
+            arrayX+= DataGraph.get(i).getAccXValue() + ", ";
+            arrayY+= DataGraph.get(i).getAccYValue() + ", ";
+            arrayZ+= DataGraph.get(i).getAccZValue() + ", ";
+            arrayTmp+= DataGraph.get(i).getTemperature() + ", ";
+
         }
-        arrays+=" ]";
+        arrayX+=" ]";
+        arrayY+=" ]";
+        arrayZ+=" ]";
+        arrayTmp+=" ]";
 
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n" +
@@ -58,15 +69,42 @@ public class Display extends HttpServlet {
                 "                title: \"red line\",\n" +
                 "                id: \"g1\",\n" +
                 "                valueAxis: \"v1\",\n" +
-                "                valueField: \"visits\",\n" +
-                "                bullet: \"round\",\n" +
+                "                valueField: \"Lin1\",\n" +
+                "              //  bullet: \"round\",\n" +
                 "                bulletBorderColor: \"#FFFFFF\",\n" +
                 "                bulletBorderAlpha: 1,\n" +
                 "                lineThickness: 2,\n" +
                 "                lineColor: \"#b5030d\",\n" +
-                "                negativeLineColor: \"#0352b5\",\n" +
-                "                balloonText: \"[[category]]<br><b><span style='font-size:14px;'>value: [[value]]</span></b>\"\n" +
-                "            }],\n" +
+                "               // negativeLineColor: \"#0352b5\",\n" +
+                "                balloonText: \"[[category]]<br><b><span style='font-size:14px;'>XAxis: [[value]]</span></b>\"\n" +
+                "            },{\n" +
+                "                title: \"blue line\",\n" +
+                "                id: \"g2\",\n" +
+                "                valueAxis: \"v1\",\n" +
+                "                valueField: \"Lin2\",\n" +
+                "                temp:\"Lin1\",\n" +
+                "                bullet: \"round\",\n" +
+                "                bulletBorderColor: \"#FFFFFF\",\n" +
+                "                bulletBorderAlpha: 1,\n" +
+                "                lineThickness: 2,\n" +
+                "                lineColor: \"#0352b5\",\n" +
+                "                //  negativeLineColor: \"#0352b5\",\n" +
+                "                balloonText: \"[[category]]<br><b><span style='font-size:14px;'>YAxis: [[value]]</span></b><br><b><span style='font-size:14px;'>Temp: [[temp]]</span></b>\"\n" +
+                "\n" +
+                "            },{\n" +
+                "                    title: \"blue line\",\n" +
+                "                    id: \"g3\",\n" +
+                "                    valueAxis: \"v1\",\n" +
+                "                    valueField: \"Lin3\",\n" +
+                "                    bullet: \"round\",\n" +
+                "                    bulletBorderColor: \"#FFFFFF\",\n" +
+                "                    bulletBorderAlpha: 1,\n" +
+                "                    lineThickness: 2,\n" +
+                "                    lineColor: \"#FFFF00\",\n" +
+                "                    //  negativeLineColor: \"#0352b5\",\n" +
+                "                    balloonText: \"[[category]]<br><b><span style='font-size:14px;'>ZAxis: [[value]]</span></b>\"\n" +
+                "\n" +
+                "                }],\n" +
                 "            chartCursor: {\n" +
                 "                fullWidth:true,\n" +
                 "                cursorAlpha:0.1\n" +
@@ -75,7 +113,9 @@ public class Display extends HttpServlet {
                 "                scrollbarHeight: 40,\n" +
                 "                color: \"#FFFFFF\",\n" +
                 "                autoGridCount: true,\n" +
-                "                graph: \"g1\"\n" +
+                "                graph: \"g1\",\n" +
+                "                graph: \"g2\",\n" +
+                "                graph: \"g3\",\n" +
                 "            },\n" +
                 "\n" +
                 "            mouseWheelZoomEnabled:true\n" +
@@ -88,21 +128,30 @@ public class Display extends HttpServlet {
                 "        function generateChartData() {\n" +
                 "\n" +
                 "            var firstDate = new Date();\n" +
-                "            firstDate.setDate(firstDate.getDate() - 400);\n" +
-                "            var array = "+arrays+";                        \n " +
+                "            var ArrayX = "+arrayX+";\n" +
+                "            var ArrayY ="+arrayY+" ;\n" +
+                "            var ArrayZ ="+arrayZ+" ;\n" +
+                "            var Temp = "+arrayTmp+";\n" +
+                "            firstDate.setDate(firstDate.getDate() - "+DataGraph.size()+");\n" +
                 "\n" +
-                "            for (var i = 0; i < 400; i++) {\n" +
+                "            for (var i = 0; i < "+DataGraph.size()+"; i++) {\n" +
                 "                // we create date objects here. In your data, you can have date strings\n" +
                 "                // and then set format of your dates using chart.dataDateFormat property,\n" +
                 "                // however when possible, use date objects, as this will speed up chart rendering.\n" +
                 "                var newDate = new Date(firstDate);\n" +
                 "                newDate.setDate(newDate.getDate() + i);\n" +
                 "\n" +
-                "                var visits = array[i];\n" +
+                "                var line1 = ArrayX[i];\n" +
+                "                var line2 = ArrayY[i];\n" +
+                "                var line3 = ArrayZ[i];\n" +
+                "                var tmp = Temp[i];\n" +
                 "\n" +
                 "                chartData.push({\n" +
                 "                    date: newDate,\n" +
-                "                    visits: visits\n" +
+                "                    Lin1: line1,\n" +
+                "                    Lin2: line2,\n" +
+                "                    Lin3: line3,\n" +
+                "                    temp: tmp\n" +
                 "                });\n" +
                 "            }\n" +
                 "        }\n" +

@@ -30,15 +30,42 @@
                 title: "red line",
                 id: "g1",
                 valueAxis: "v1",
-                valueField: "visits",
-                bullet: "round",
+                valueField: "Lin1",
+              //  bullet: "round",
                 bulletBorderColor: "#FFFFFF",
                 bulletBorderAlpha: 1,
                 lineThickness: 2,
                 lineColor: "#b5030d",
-                negativeLineColor: "#0352b5",
-                balloonText: "[[category]]<br><b><span style='font-size:14px;'>value: [[value]]</span></b>"
-            }],
+               // negativeLineColor: "#0352b5",
+                balloonText: "[[category]]<br><b><span style='font-size:14px;'>XAxis: [[value]]</span></b>"
+            },{
+                title: "blue line",
+                id: "g2",
+                valueAxis: "v1",
+                valueField: "Lin2",
+                temp:"Lin1",
+                bullet: "round",
+                bulletBorderColor: "#FFFFFF",
+                bulletBorderAlpha: 1,
+                lineThickness: 2,
+                lineColor: "#0352b5",
+                //  negativeLineColor: "#0352b5",
+                balloonText: "[[category]]<br><b><span style='font-size:14px;'>YAxis: [[value]]</span></b><br><b><span style='font-size:14px;'>Temp: [[Lin1]]</span></b>"
+
+            },{
+                    title: "blue line",
+                    id: "g3",
+                    valueAxis: "v1",
+                    valueField: "Lin3",
+                    bullet: "round",
+                    bulletBorderColor: "#FFFFFF",
+                    bulletBorderAlpha: 1,
+                    lineThickness: 2,
+                    lineColor: "#FFFF00",
+                    //  negativeLineColor: "#0352b5",
+                    balloonText: "[[category]]<br><b><span style='font-size:14px;'>ZAxis: [[value]]</span></b>"
+
+                }],
             chartCursor: {
                 fullWidth:true,
                 cursorAlpha:0.1
@@ -47,7 +74,9 @@
                 scrollbarHeight: 40,
                 color: "#FFFFFF",
                 autoGridCount: true,
-                graph: "g1"
+                graph: "g1",
+                graph: "g2",
+                graph: "g3",
             },
 
             mouseWheelZoomEnabled:true
@@ -69,11 +98,17 @@
                 var newDate = new Date(firstDate);
                 newDate.setDate(newDate.getDate() + i);
 
-                var visits = Math.round(Math.random() * 40) - 20;
+                var line1 = Math.round(Math.random() * 40) - 20;
+                var line2 = Math.round(Math.random() * 40) - 20;
+                var line3 = Math.round(Math.random() * 40) - 20;
+                var tmp = Math.round(Math.random() * 40) - 20;
 
                 chartData.push({
                     date: newDate,
-                    visits: visits
+                    Lin1: line1,
+                    Lin2: line2,
+                    Lin3: line3,
+                    temp: tmp
                 });
             }
         }
