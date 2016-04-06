@@ -32,4 +32,14 @@
         <url-pattern>/DisplayMag</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>PutDataToDb</servlet-name>
+        <servlet-class>PutDataToDb</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PutDataToDb</servlet-name>
+        <url-pattern>/PutDataToDb</url-pattern>
+    </servlet-mapping>
+
 </web-app>

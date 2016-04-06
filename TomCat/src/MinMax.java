@@ -2,6 +2,9 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.lang.reflect.Array;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -14,6 +17,7 @@ public class MinMax extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PreparedStatement sqlUpdate;
         String sts = "";
         String inputString = request.getParameter("data");
         try {
@@ -44,7 +48,7 @@ public class MinMax extends HttpServlet {
 //            System.out.print(array[5]+ " ");
 //            System.out.println(array[6]+ " ");
             //***********************************************************//
-            
+            String StrToDb = "";
             try{
                 File fl = new File("C:/temp/base.txt");
                 PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fl,true)));
@@ -55,13 +59,21 @@ public class MinMax extends HttpServlet {
 
 
                 out.print(array[0]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.print(array[1]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.print(array[2]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.print(array[3]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.print(array[4]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.print(array[5]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.print(array[6]+ " ");
+                StrToDb+=array[0]+ " ";
                 out.println(time+ " ");
+                StrToDb+=time+ " ";
                 out.close();
 
             }catch (IOException e) {
@@ -70,31 +82,41 @@ public class MinMax extends HttpServlet {
             }
             //***********************************************************//
 
+            try {
+                // load database driver class
+                Class.forName("com.mysql.jdbc.Driver");
 
-            //Arrays.sort(array);
+                // connect to database
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/readings", "root", "root");
 
-          //  double max = array[0];
-         //  double min = array[array.length-1];
-          //  double sum = 0;
-
-
-         //   for (int i = 0; i <array.length; i++){
-         //       sum += array[i];
-         //   }
-
-
-//            JSONObject jsn = new JSONObject();
-//            jsn.put("max",max);
-//            jsn.put("min",min);
-//            jsn.put("sum",sum);
-//
-//            System.out.println("Max is: "+ max);
-//            System.out.println("Min is: "+ min);
-//            System.out.println("Sum is: "+ sum);
-//
-//            PrintWriter out = response.getWriter();
-//            out.println(jsn);
-
+                sqlUpdate = connection.prepareStatement(
+                        "INSERT INTO datareadings ( accX, accY, accZ, magX, magY, magZ, tmp, time ) " +
+                                "VALUES ( ? ,  ? , ? , ? , ? ,? ,? ,?)" );
+                int result;
+                String[] IntoSql;
+                    IntoSql = StrToDb.split(" ");
+                    sqlUpdate.clearParameters();
+                    sqlUpdate.setInt(1, Integer.parseInt(IntoSql[0]));
+                    sqlUpdate.setInt(2, Integer.parseInt(IntoSql[1]));
+                    sqlUpdate.setInt(3, Integer.parseInt(IntoSql[2]));
+                    sqlUpdate.setInt(4, Integer.parseInt(IntoSql[3]));
+                    sqlUpdate.setInt(5, Integer.parseInt(IntoSql[4]));
+                    sqlUpdate.setInt(6, Integer.parseInt(IntoSql[5]));
+                    sqlUpdate.setInt(7, Integer.parseInt(IntoSql[6]));
+                    sqlUpdate.setString(8, IntoSql[7]);
+                    result = sqlUpdate.executeUpdate();
+                    // if insert fails, rollback and discontinue
+                    if ( result == 0 ) {
+                        connection.rollback(); // rollback insert
+                        System.out.println("did rallack");
+                    }
+                // close statement and connection
+                connection.close();
+                System.out.println("Database saved");
+                }catch (Exception ee) {
+                System.out.println("Unable to saved in database");
+                }
 
         } catch (Exception e) {
             System.out.println("Servlet died");
