@@ -15,12 +15,21 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>Display</servlet-name>
-        <servlet-class>Display</servlet-class>
+    <servlet-name>DisplayAcc</servlet-name>
+    <servlet-class>DisplayAcc</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayAcc</servlet-name>
+        <url-pattern>/DisplayAcc</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DisplayMag</servlet-name>
+        <servlet-class>DisplayMag</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Display</servlet-name>
-        <url-pattern>/Display</url-pattern>
+        <servlet-name>DisplayMag</servlet-name>
+        <url-pattern>/DisplayMag</url-pattern>
     </servlet-mapping>
 
 </web-app>

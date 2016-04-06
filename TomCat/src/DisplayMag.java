@@ -9,8 +9,8 @@ import javax.servlet.http.*;
 import javax.xml.crypto.Data;
 
 
-@WebServlet("/Display")
-public class Display extends HttpServlet {
+@WebServlet("/DisplayMag")
+public class DisplayMag extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,8 +26,8 @@ public class Display extends HttpServlet {
 
         for (int i = 0; i < DataGraph.size(); i++){
             arrayX+= DataGraph.get(i).getAccXValue() + ", ";
-            arrayY+= DataGraph.get(i).getAccYValue() + ", ";
-            arrayZ+= DataGraph.get(i).getAccZValue() + ", ";
+            arrayY+= DataGraph.get(i).getMagXValue() + ", ";
+            arrayZ+= DataGraph.get(i).getMagZValue() + ", ";
             arrayTmp+= DataGraph.get(i).getTemperature() + ", ";
 
         }
@@ -191,7 +191,7 @@ public class Display extends HttpServlet {
                 "</html>");
 
     }
-    
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
