@@ -35,6 +35,24 @@
         <option name="myItemId" value="readings" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="datareadings" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="TomCatBook" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="readings" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -46,13 +64,13 @@
       <file leaf-file-name="Data.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-58.384617">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.3846154">
+              <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="99" />
               <folding>
-                <marker date="1459944026871" expanded="true" signature="1383:1398" placeholder="..." />
-                <marker date="1459944026871" expanded="true" signature="1906:1921" placeholder="..." />
-                <marker date="1459944026871" expanded="true" signature="1970:1985" placeholder="..." />
-                <marker date="1459944026871" expanded="true" signature="2507:2522" placeholder="..." />
+                <marker date="1459968836343" expanded="true" signature="1385:1400" placeholder="..." />
+                <marker date="1459968836343" expanded="true" signature="1904:1919" placeholder="..." />
+                <marker date="1459968836343" expanded="true" signature="1968:1983" placeholder="..." />
+                <marker date="1459968836343" expanded="true" signature="2501:2516" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -61,18 +79,18 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
+            <state vertical-scroll-proportion="-11.0">
               <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinMax.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MinMax.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MinMax.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33580247">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding>
                 <marker date="1459962514108" expanded="true" signature="3624:3773" placeholder="INSERT INTO ..." />
               </folding>
@@ -80,12 +98,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DisplayAcc.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DisplayAcc.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DisplayAcc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.52668214">
+              <caret line="119" column="63" selection-start-line="119" selection-start-column="63" selection-end-line="119" selection-end-column="63" />
+              <folding>
+                <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+                <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+                <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+                <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,6 +121,20 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1459962161342" expanded="true" signature="1088:1174" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisplayMag.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DisplayMag.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="100" selection-start-line="107" selection-start-column="100" selection-end-line="107" selection-end-column="100" />
+              <folding>
+                <element signature="method#CreatePoint#0;class#DisplayMag#0" expanded="false" />
+                <element signature="method#CreatePointsFromDb#0;class#DisplayMag#0" expanded="false" />
+                <marker date="1459969597677" expanded="true" signature="13280:13306" placeholder="SELECT * FRO..datareadings..." />
               </folding>
             </state>
           </provider>
@@ -135,16 +172,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.4">
               <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DisplayMag.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DisplayMag.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -198,16 +225,16 @@
         <option value="$PROJECT_DIR$/web/app.jsp" />
         <option value="$PROJECT_DIR$/web/try.html" />
         <option value="$PROJECT_DIR$/src/SAy.java" />
-        <option value="$PROJECT_DIR$/web/Data.html" />
         <option value="$PROJECT_DIR$/src/Display.java" />
-        <option value="$PROJECT_DIR$/src/DisplayMag.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/src/DisplayAcc.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/Test.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a6a13924-ab56-42e2-8f45-efbbb6cd8541/console.sql" />
         <option value="$PROJECT_DIR$/src/PutDataToDb.java" />
         <option value="$PROJECT_DIR$/src/MinMax.java" />
+        <option value="$PROJECT_DIR$/web/Data.html" />
+        <option value="$PROJECT_DIR$/src/DisplayMag.java" />
+        <option value="$PROJECT_DIR$/src/DisplayAcc.java" />
       </list>
     </option>
   </component>
@@ -772,12 +799,12 @@
       <workItem from="1459874609481" duration="21800000" />
       <workItem from="1459941355775" duration="4408000" />
       <workItem from="1459945773412" duration="1547000" />
-      <workItem from="1459958893471" duration="2242000" />
+      <workItem from="1459958893471" duration="7582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83908000" />
+    <option name="totallyTimeSpent" value="89248000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,13 +828,13 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972324" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11378205" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29363784" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2512235" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21331316" sideWeight="0.48347107" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08988764" sideWeight="0.5165289" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1709531" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14599092" sideWeight="0.47494555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14599092" sideWeight="0.52505445" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.096066564" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -862,7 +889,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -884,10 +911,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="34" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="34" />
           <folding>
-            <marker date="1459944026871" expanded="true" signature="1383:1398" placeholder="..." />
-            <marker date="1459944026871" expanded="true" signature="1906:1921" placeholder="..." />
-            <marker date="1459944026871" expanded="true" signature="1970:1985" placeholder="..." />
-            <marker date="1459944026871" expanded="true" signature="2507:2522" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="1385:1400" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="1904:1919" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="1968:1983" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="2501:2516" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -919,7 +946,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -927,7 +959,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,7 +980,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -959,7 +1001,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -975,7 +1022,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,7 +1043,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,7 +1064,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,7 +1092,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,14 +1229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DisplayMag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1192,28 +1251,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Data.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a6a13924-ab56-42e2-8f45-efbbb6cd8541/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-58.384617">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <marker date="1459944026871" expanded="true" signature="1383:1398" placeholder="..." />
-            <marker date="1459944026871" expanded="true" signature="1906:1921" placeholder="..." />
-            <marker date="1459944026871" expanded="true" signature="1970:1985" placeholder="..." />
-            <marker date="1459944026871" expanded="true" signature="2507:2522" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        <state vertical-scroll-proportion="-3.4">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/5412c7a1/a6a13924-ab56-42e2-8f45-efbbb6cd8541/readings..datareadings">
+    <entry file="dbDummy://dbtable:/5412c7a1/a6a13924-ab56-42e2-8f45-efbbb6cd8541/readings..data">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1236,19 +1282,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a6a13924-ab56-42e2-8f45-efbbb6cd8541/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+    <entry file="dbDummy://dbtable:/5412c7a1/a6a13924-ab56-42e2-8f45-efbbb6cd8541/readings..datareadings">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DisplayAcc.java">
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinMax.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
-          <folding />
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <marker date="1459962514108" expanded="true" signature="3624:3773" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1263,12 +1324,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinMax.java">
+    <entry file="file://$PROJECT_DIR$/web/Data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33580247">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state vertical-scroll-proportion="-1.3846154">
+          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="99" />
           <folding>
-            <marker date="1459962514108" expanded="true" signature="3624:3773" placeholder="INSERT INTO ..." />
+            <marker date="1459968836343" expanded="true" signature="1385:1400" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="1904:1919" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="1968:1983" placeholder="..." />
+            <marker date="1459968836343" expanded="true" signature="2501:2516" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DisplayMag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="100" selection-start-line="107" selection-start-column="100" selection-end-line="107" selection-end-column="100" />
+          <folding>
+            <element signature="method#CreatePoint#0;class#DisplayMag#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayMag#0" expanded="false" />
+            <marker date="1459969597677" expanded="true" signature="13280:13306" placeholder="SELECT * FRO..datareadings..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DisplayAcc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52668214">
+          <caret line="119" column="63" selection-start-line="119" selection-start-column="63" selection-end-line="119" selection-end-column="63" />
+          <folding>
+            <element signature="method#CreateData#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePoint#0;class#DisplayAcc#0" expanded="false" />
+            <element signature="method#CreatePointsFromDb#0;class#DisplayAcc#0" expanded="false" />
+            <marker date="1459969612201" expanded="true" signature="13527:13553" placeholder="SELECT * FRO..datareadings..." />
           </folding>
         </state>
       </provider>

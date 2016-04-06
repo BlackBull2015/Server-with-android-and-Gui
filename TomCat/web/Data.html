@@ -15,9 +15,9 @@
         var chart = AmCharts.makeChart("chartdiv", {
             type: "serial",
             dataProvider: chartData,
-            categoryField: "date",
+            categoryField: "Location",
             categoryAxis: {
-                parseDates: true,
+             //   parseDates: true,
                 gridAlpha: 0.15,
                 minorGridEnabled: true,
                 axisColor: "#DADADA"
@@ -37,7 +37,7 @@
                 lineThickness: 2,
                 lineColor: "#b5030d",
                // negativeLineColor: "#0352b5",
-                balloonText: "[[category]]<br><b><span style='font-size:14px;'>XAxis: [[value]]</span></b>"
+                balloonText: "[[date]]<br><b><span style='font-size:14px;'>XAxis: [[value]]</span></b>"
             },{
                 title: "blue line",
                 id: "g2",
@@ -50,7 +50,7 @@
                 lineThickness: 2,
                 lineColor: "#0352b5",
                 //  negativeLineColor: "#0352b5",
-                balloonText: "[[category]]<br><b><span style='font-size:14px;'>YAxis: [[value]]</span></b><br><b><span style='font-size:14px;'>Temp: [[Lin1]]</span></b>"
+                balloonText: "[[date]]<br><b><span style='font-size:14px;'>YAxis: [[value]]</span></b><br><b><span style='font-size:14px;'>Temp: [[Lin1]]</span></b>"
 
             },{
                     title: "blue line",
@@ -63,7 +63,7 @@
                     lineThickness: 2,
                     lineColor: "#FFFF00",
                     //  negativeLineColor: "#0352b5",
-                    balloonText: "[[category]]<br><b><span style='font-size:14px;'>ZAxis: [[value]]</span></b>"
+                    balloonText: "[[date]]<br><b><span style='font-size:14px;'>ZAxis: [[value]]</span></b>"
 
                 }],
             chartCursor: {
@@ -88,27 +88,25 @@
         // generate some random data, quite different range
         function generateChartData() {
 
-            var firstDate = new Date();
-            firstDate.setDate(firstDate.getDate() - 500);
-
             for (var i = 0; i < 500; i++) {
                 // we create date objects here. In your data, you can have date strings
                 // and then set format of your dates using chart.dataDateFormat property,
                 // however when possible, use date objects, as this will speed up chart rendering.
-                var newDate = new Date(firstDate);
-                newDate.setDate(newDate.getDate() + i);
+                var newDate =  AmCharts.stringToDate("2016-04-04-16:47:03", "YYYY-MM-DD-JJ:NN:SS");
 
                 var line1 = Math.round(Math.random() * 40) - 20;
                 var line2 = Math.round(Math.random() * 40) - 20;
                 var line3 = Math.round(Math.random() * 40) - 20;
                 var tmp = Math.round(Math.random() * 40) - 20;
+                var Loc = i;
 
                 chartData.push({
                     date: newDate,
                     Lin1: line1,
                     Lin2: line2,
                     Lin3: line3,
-                    temp: tmp
+                    temp: tmp,
+                    Location: Loc
                 });
             }
         }

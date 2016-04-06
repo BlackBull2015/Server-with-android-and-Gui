@@ -30,6 +30,18 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - @localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="readings" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="datareadings" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -38,13 +50,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5931624">
-              <caret line="313" column="17" selection-start-line="313" selection-start-column="17" selection-end-line="313" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
               <folding>
-                <element signature="method#Gui#0;class#Gui#0" expanded="false" />
                 <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
                 <element signature="class#3823:4024" expanded="false" />
                 <element signature="class#4103:4571" expanded="false" />
@@ -54,12 +65,14 @@
                 <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
                 <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
                 <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+                <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
                 <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
                 <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-                <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-                <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-                <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-                <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+                <element signature="method#main#0;class#Gui#0" expanded="false" />
+                <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+                <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+                <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+                <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
               </folding>
             </state>
           </provider>
@@ -122,7 +135,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readings.datareadings" pinned="false" current-in-tab="false">
+      <file leaf-file-name="readings.datareadings" pinned="false" current-in-tab="true">
         <entry file="dbDummy://dbtable:/eac5af53/93a50970-7043-406f-8fb5-15b00e982dae/readings..datareadings">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -175,8 +188,8 @@
         <option value="$PROJECT_DIR$/src/PrintVals.java" />
         <option value="$PROJECT_DIR$/src/Reading.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/93a50970-7043-406f-8fb5-15b00e982dae/console.sql" />
-        <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/Gui.java" />
       </list>
     </option>
   </component>
@@ -584,6 +597,9 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Unknown" factoryName="Unknown">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -654,12 +670,12 @@
       <workItem from="1459853469366" duration="618000" />
       <workItem from="1459882890387" duration="2773000" />
       <workItem from="1459941226978" duration="1362000" />
-      <workItem from="1459961269737" duration="952000" />
+      <workItem from="1459961269737" duration="2377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49802000" />
+    <option name="totallyTimeSpent" value="51227000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -676,16 +692,17 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19412725" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19412725" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.108169444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.090771556" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19894099" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -695,7 +712,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33768353" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -750,7 +766,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -760,12 +775,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -803,7 +820,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -813,12 +829,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -856,7 +874,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="45" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -866,12 +883,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -909,7 +928,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="45" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -919,12 +937,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -962,7 +982,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -972,12 +991,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -1008,7 +1029,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -1018,12 +1038,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -1054,7 +1076,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -1064,12 +1085,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -1100,7 +1123,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -1110,12 +1132,14 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
         </state>
       </provider>
@@ -1190,19 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/eac5af53/93a50970-7043-406f-8fb5-15b00e982dae/readings..datareadings">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93a50970-7043-406f-8fb5-15b00e982dae/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1266,10 +1277,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5931624">
-          <caret line="313" column="17" selection-start-line="313" selection-start-column="17" selection-end-line="313" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
           <folding>
-            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#2011:2553" expanded="false" />
             <element signature="class#3823:4024" expanded="false" />
             <element signature="class#4103:4571" expanded="false" />
@@ -1279,13 +1289,28 @@
             <element signature="method#CreateData#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePoint#0;class#Gui#0" expanded="false" />
             <element signature="method#CreatePointsFromDb#0;class#Gui#0" expanded="false" />
+            <element signature="method#saveInDb#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDatabase#0;class#Gui#0" expanded="false" />
             <element signature="method#ResetDataFile#0;class#Gui#0" expanded="false" />
-            <marker date="1459785883554" expanded="true" signature="9540:9693" placeholder="INSERT INTO ..." />
-            <marker date="1459785883554" expanded="true" signature="12072:12098" placeholder="SELECT * FRO..datareadings..." />
-            <marker date="1459785883554" expanded="true" signature="13871:13904" placeholder="drop TABLE I..." />
-            <marker date="1459785883554" expanded="true" signature="14036:14808" placeholder="create table..datareadings..." />
+            <element signature="method#main#0;class#Gui#0" expanded="false" />
+            <marker date="1459962714537" expanded="true" signature="9665:9691" placeholder="SELECT * FRO..datareadings..." />
+            <marker date="1459962714537" expanded="true" signature="11435:11588" placeholder="INSERT INTO ..." />
+            <marker date="1459962714537" expanded="true" signature="13873:13906" placeholder="drop TABLE I..." />
+            <marker date="1459962714537" expanded="true" signature="14038:14810" placeholder="create table..datareadings..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/eac5af53/93a50970-7043-406f-8fb5-15b00e982dae/readings..datareadings">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

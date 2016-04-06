@@ -2,6 +2,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.*;
+import java.sql.*;
 import java.util.ArrayList;
 import javax.servlet.*;
 import javax.servlet.annotation.*;
@@ -31,12 +32,16 @@ public class DisplayAcc extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
+
+
         ArrayList<Reading> DataGraph;
-        DataGraph = CreateData(new File("C://temp/base.txt"));
+        DataGraph = CreatePointsFromDb();
         String arrayX = "[";
         String arrayY = "[";
         String arrayZ = "[";
         String arrayTmp = "[";
+        String arrayTime = "[";
 
 
 
@@ -45,12 +50,14 @@ public class DisplayAcc extends HttpServlet {
             arrayY+= DataGraph.get(i).getAccYValue() + ", ";
             arrayZ+= DataGraph.get(i).getAccZValue() + ", ";
             arrayTmp+= DataGraph.get(i).getTemperature() + ", ";
+            arrayTime+= "\""+DataGraph.get(i).getTime() + "\", ";
 
         }
         arrayX+=" ]";
         arrayY+=" ]";
         arrayZ+=" ]";
         arrayTmp+=" ]";
+        arrayTime+=" ]";
 
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n" +
@@ -70,9 +77,8 @@ public class DisplayAcc extends HttpServlet {
                 "        var chart = AmCharts.makeChart(\"chartdiv\", {\n" +
                 "            type: \"serial\",\n" +
                 "            dataProvider: chartData,\n" +
-                "            categoryField: \"date\",\n" +
+                "            categoryField: \"location\",\n" +
                 "            categoryAxis: {\n" +
-                "                parseDates: true,\n" +
                 "                gridAlpha: 0.15,\n" +
                 "                minorGridEnabled: true,\n" +
                 "                axisColor: \"#DADADA\"\n" +
@@ -92,7 +98,7 @@ public class DisplayAcc extends HttpServlet {
                 "                lineThickness: 2,\n" +
                 "                lineColor: \"#b5030d\",\n" +
                 "               // negativeLineColor: \"#0352b5\",\n" +
-                "                balloonText: \"[[category]]<br><b><span style='font-size:14px;'>XAxis: [[value]]</span></b>\"\n" +
+                "                balloonText: \"[[date]]<br><b><span style='font-size:14px;'>AccXAxis: [[value]]</span></b>\"\n" +
                 "            },{\n" +
                 "                title: \"blue line\",\n" +
                 "                id: \"g2\",\n" +
@@ -105,7 +111,7 @@ public class DisplayAcc extends HttpServlet {
                 "                lineThickness: 2,\n" +
                 "                lineColor: \"#0352b5\",\n" +
                 "                //  negativeLineColor: \"#0352b5\",\n" +
-                "                balloonText: \"[[category]]<br><b><span style='font-size:14px;'>YAxis: [[value]]</span></b><br><b><span style='font-size:14px;'>Temp: [[temp]]</span></b>\"\n" +
+                "                balloonText: \"[[date]]<br><b><span style='font-size:14px;'>AccYAxis: [[value]]</span></b><br><b><span style='font-size:14px;'>Temp: [[temp]]</span></b>\"\n" +
                 "\n" +
                 "            },{\n" +
                 "                    title: \"blue line\",\n" +
@@ -118,7 +124,7 @@ public class DisplayAcc extends HttpServlet {
                 "                    lineThickness: 2,\n" +
                 "                    lineColor: \"#FFFF00\",\n" +
                 "                    //  negativeLineColor: \"#0352b5\",\n" +
-                "                    balloonText: \"[[category]]<br><b><span style='font-size:14px;'>ZAxis: [[value]]</span></b>\"\n" +
+                "                    balloonText: \"[[date]]<br><b><span style='font-size:14px;'>AccZAxis: [[value]]</span></b>\"\n" +
                 "\n" +
                 "                }],\n" +
                 "            chartCursor: {\n" +
@@ -148,26 +154,27 @@ public class DisplayAcc extends HttpServlet {
                 "            var ArrayY ="+arrayY+" ;\n" +
                 "            var ArrayZ ="+arrayZ+" ;\n" +
                 "            var Temp = "+arrayTmp+";\n" +
-                "            firstDate.setDate(firstDate.getDate() - "+DataGraph.size()+");\n" +
+                "            var Time = "+arrayTime+";\n" +
                 "\n" +
                 "            for (var i = 0; i < "+DataGraph.size()+"; i++) {\n" +
                 "                // we create date objects here. In your data, you can have date strings\n" +
                 "                // and then set format of your dates using chart.dataDateFormat property,\n" +
                 "                // however when possible, use date objects, as this will speed up chart rendering.\n" +
-                "                var newDate = new Date(firstDate);\n" +
-                "                newDate.setDate(newDate.getDate() + i);\n" +
+                "                var newDate =  AmCharts.stringToDate(Time[i], \"YYYY-MM-DD-JJ:NN:SS\");;\n" +
                 "\n" +
                 "                var line1 = ArrayX[i];\n" +
                 "                var line2 = ArrayY[i];\n" +
                 "                var line3 = ArrayZ[i];\n" +
                 "                var tmp = Temp[i];\n" +
+                "                var Loc = i;\n" +
                 "\n" +
                 "                chartData.push({\n" +
                 "                    date: newDate,\n" +
                 "                    Lin1: line1,\n" +
                 "                    Lin2: line2,\n" +
                 "                    Lin3: line3,\n" +
-                "                    temp: tmp\n" +
+                "                    temp: tmp,\n" +
+                "                    location: Loc\n" +
                 "                });\n" +
                 "            }\n" +
                 "        }\n" +
@@ -257,6 +264,94 @@ public class DisplayAcc extends HttpServlet {
         }else
             return null;
     }
+
+    private Reading CreatePoint (String str) throws IOException {
+
+        String[] Informaions;
+        Reading Rd = new Reading();
+
+        if (str.length() > 0) {
+
+            try {
+                Informaions = str.split(" ");
+                Rd.setAccXValue(Integer.parseInt(Informaions[0]));
+                Rd.setAccYValue(Integer.parseInt(Informaions[1]));
+                Rd.setAccZValue(Integer.parseInt(Informaions[2]));
+
+                Rd.setMagXValue(Integer.parseInt(Informaions[3]));
+                Rd.setMagYValue(Integer.parseInt(Informaions[4]));
+                Rd.setMagZValue(Integer.parseInt(Informaions[5]));
+
+                Rd.setTemperature(Integer.parseInt(Informaions[6]));
+
+                if(Informaions.length > 6)
+                    Rd.setTime(Informaions[7]);
+                else
+                    Rd.setTime("N/A");
+
+                Rd.computeHeading();
+
+            }catch (Exception e){
+                System.out.println("Failure in String structure");
+            }
+
+
+        }
+        return Rd;
+    }
+
+
+    private ArrayList<Reading> CreatePointsFromDb(){
+        try {
+            ArrayList<Reading> DataGraph= new ArrayList<>();
+                            // load database driver class
+                Class.forName("com.mysql.jdbc.Driver");
+
+                // connect to database
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/readings", "root", "root");
+
+                // create Statement to query database
+                Statement statement = connection.createStatement();
+
+                // query database
+                ResultSet resultSet =
+                        statement.executeQuery("SELECT * FROM datareadings");
+
+                // process query results
+                StringBuffer results = new StringBuffer();
+                ResultSetMetaData metaData = resultSet.getMetaData();
+                int numberOfColumns = metaData.getColumnCount();
+                String ReadingFromDb = "";
+                for (int i = 1; i <= numberOfColumns; i++) {
+                    //  results.append(metaData.getColumnName(i)
+                    //        + "\t");
+                }
+
+                //results.append("\n");
+
+                while (resultSet.next()) {
+
+                    for (int i = 2; i <= numberOfColumns; i++) {
+                        ReadingFromDb+=resultSet.getObject(i)+" ";
+                        //results.append(resultSet.getObject(i));
+                    }
+                    System.out.println(ReadingFromDb);
+                    DataGraph.add(CreatePoint(ReadingFromDb));
+                    ReadingFromDb = "";
+                    // results.append("\n");
+                }
+                System.out.println("Operation done");
+                // close statement and connection
+                statement.close();
+                connection.close();
+            return DataGraph;
+        } catch (Exception ee) {
+            return null;
+        }
+
+    }
+
 }
 
 

@@ -263,6 +263,59 @@ public class Gui extends JPanel {
         return Rd;
         }
 
+
+    private void CreatePointsFromDb(){
+        try {
+
+            if (DataReadMain.isEmpty()){
+
+                // load database driver class
+                Class.forName("com.mysql.jdbc.Driver");
+
+                // connect to database
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/readings", "root", "root");
+
+                // create Statement to query database
+                Statement statement = connection.createStatement();
+
+                // query database
+                ResultSet resultSet =
+                        statement.executeQuery("SELECT * FROM datareadings");
+
+                // process query results
+                StringBuffer results = new StringBuffer();
+                ResultSetMetaData metaData = resultSet.getMetaData();
+                int numberOfColumns = metaData.getColumnCount();
+                String ReadingFromDb = "";
+                for (int i = 1; i <= numberOfColumns; i++) {
+                    //  results.append(metaData.getColumnName(i)
+                    //        + "\t");
+                }
+
+                //results.append("\n");
+
+                while (resultSet.next()) {
+
+                    for (int i = 2; i <= numberOfColumns; i++) {
+                        ReadingFromDb+=resultSet.getObject(i)+" ";
+                        //results.append(resultSet.getObject(i));
+                    }
+                    System.out.println(ReadingFromDb);
+                    DataReadMain.add(CreatePoint(ReadingFromDb));
+                    ReadingFromDb = "";
+                    // results.append("\n");
+                }
+                System.out.println("Operation done");
+                // close statement and connection
+                statement.close();
+                connection.close();
+            }
+        } catch (Exception ee) {
+
+        }
+    }
+
     private void saveInDb(){
 
         new Thread(){
@@ -317,57 +370,6 @@ public class Gui extends JPanel {
 
     }
 
-    private void CreatePointsFromDb(){
-        try {
-
-            if (DataReadMain.isEmpty()){
-
-                // load database driver class
-                Class.forName("com.mysql.jdbc.Driver");
-
-                // connect to database
-                Connection connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/readings", "root", "root");
-
-                // create Statement to query database
-                Statement statement = connection.createStatement();
-
-                // query database
-                ResultSet resultSet =
-                        statement.executeQuery("SELECT * FROM datareadings");
-
-                // process query results
-                StringBuffer results = new StringBuffer();
-                ResultSetMetaData metaData = resultSet.getMetaData();
-                int numberOfColumns = metaData.getColumnCount();
-                String ReadingFromDb = "";
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    //  results.append(metaData.getColumnName(i)
-                    //        + "\t");
-                }
-
-                //results.append("\n");
-
-                while (resultSet.next()) {
-
-                    for (int i = 2; i <= numberOfColumns; i++) {
-                        ReadingFromDb+=resultSet.getObject(i)+" ";
-                        //results.append(resultSet.getObject(i));
-                    }
-                    System.out.println(ReadingFromDb);
-                    DataReadMain.add(CreatePoint(ReadingFromDb));
-                    ReadingFromDb = "";
-                    // results.append("\n");
-                }
-                System.out.println("Operation done");
-                // close statement and connection
-                statement.close();
-                connection.close();
-            }
-        } catch (Exception ee) {
-
-        }
-    }
 
     private void ResetDatabase(){
 
