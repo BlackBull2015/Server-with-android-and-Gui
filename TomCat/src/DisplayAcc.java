@@ -9,23 +9,6 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import javax.xml.crypto.Data;
 
-
-
-
-
-
-
-
-
-/*
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-AmCharts.stringToDate("01-10-2014", "DD-MM-YYYY")
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-Use o set time in the graphs
-
- */
 @WebServlet("/DisplayAcc")
 public class DisplayAcc extends HttpServlet {
     @Override
