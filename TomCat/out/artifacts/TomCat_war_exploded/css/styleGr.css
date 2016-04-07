@@ -1,0 +1,17 @@
+div {
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div form {
+    display: inline-block;
+    width: 304px;
+    height: 304px;
+}
+
+div:after {
+    content: '';
+    display: inline-block;
+    width: 50%;
+}

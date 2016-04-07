@@ -11,19 +11,17 @@
     <title>Hello</title>
   </head>
   <body style="font-size:10px">
-<a href="Hello.html">Click Here Please :D</a>
+<a href="">Click Here Please :D</a>
 
 
-<div>
+    <div>
   <span>
 Accelerometer Graph
 <form action="DisplayAcc" method="get">
- <input type="image" src="image/graph.png" style="width:304px;height:228px"; value="submit"/>
+  <input type="image" src="image/graph.png" style="width:304px;height:228px"; value="submit"/>
 </form>
-</span>
-  <span>
 Magnetometer Graph
-<form action="DisplayMag" method="get">
+<form action="DisplayMag" method="get" >
   <input type="image" src="image/graph.png" style="width:304px;height:228px"; value="submit"/>
 </form>
     </span>

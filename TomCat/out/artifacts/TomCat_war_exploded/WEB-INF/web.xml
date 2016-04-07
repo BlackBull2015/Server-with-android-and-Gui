@@ -31,6 +31,14 @@
         <servlet-name>DisplayMag</servlet-name>
         <url-pattern>/DisplayMag</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>TestDisplayAllData</servlet-name>
+        <servlet-class>TestDisplayAllData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestDisplayAllData</servlet-name>
+        <url-pattern>/TestDisplayAllData</url-pattern>
+    </servlet-mapping>
 
 
     <servlet>
