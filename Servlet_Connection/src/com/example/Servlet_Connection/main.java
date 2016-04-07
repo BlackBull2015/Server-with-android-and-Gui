@@ -33,7 +33,8 @@ public class main extends Activity {
     BluetoothDevice masterdevice;
     private static String address = "98:D3:33:80:6E:8F";
     private static final String TAG = "MyActivity";
-    String baseUrl = "http://192.168.0.104:8080/MinMax";
+  //  String baseUrl = "http://192.168.0.104:8080/MinMax";
+    String baseUrl = "http://10.12.2.169:8080/MinMax";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,16 @@ public class main extends Activity {
         new ReadAllData().execute("run");
 
     }//Read bluetooth
+
+
+    public void Saveip (View v){
+        EditText edt = (EditText)findViewById(R.id.editText);
+
+        baseUrl = "http://" + edt.getText().toString() +":8080/MinMax";
+        //Toast.makeText(getActivity(), "STATS 2",Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), baseUrl, Toast.LENGTH_LONG).show();
+
+    }
 
     public void connect (View v) throws InterruptedException {
         new backgroundAsyncTask().execute("run");

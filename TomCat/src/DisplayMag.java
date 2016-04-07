@@ -27,8 +27,8 @@ public class DisplayMag extends HttpServlet {
 
 
         for (int i = 0; i < DataGraph.size(); i++){
-            arrayX+= DataGraph.get(i).getAccXValue() + ", ";
-            arrayY+= DataGraph.get(i).getMagXValue() + ", ";
+            arrayX+= DataGraph.get(i).getMagXValue() + ", ";
+            arrayY+= DataGraph.get(i).getMagYValue() + ", ";
             arrayZ+= DataGraph.get(i).getMagZValue() + ", ";
             arrayTmp+= DataGraph.get(i).getTemperature() + ", ";
             arrayTime+= "\""+DataGraph.get(i).getTime() + "\", ";
