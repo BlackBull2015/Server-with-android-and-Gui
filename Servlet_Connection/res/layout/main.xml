@@ -10,30 +10,44 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SetIp"
+            android:text="SetupIp"
             android:id="@+id/button3" android:layout_gravity="center_horizontal"
             android:onClick="Saveip"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Connect"
+            android:text="reset"
             android:id="@+id/button2" android:layout_gravity="center_horizontal"
-            android:onClick="connect"/>
+            android:onClick="reset"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Connect To Server"
+            android:text="Start"
             android:id="@+id/button" android:layout_gravity="center_horizontal"
             android:onClick="read"
             />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:id="@+id/button5" android:layout_gravity="center_horizontal"
+            android:onClick="stop"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:id="@+id/button4" android:layout_gravity="center_horizontal"
+            android:onClick="connect"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Server"
             android:id="@+id/textView2" android:layout_gravity="center_horizontal"/>
-    <ImageButton
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton" android:layout_gravity="right"/>
+            android:text="ReadDb"
+            android:id="@+id/button7" android:layout_gravity="center_horizontal"
+            android:onClick="ReadDb"/>
 </LinearLayout>

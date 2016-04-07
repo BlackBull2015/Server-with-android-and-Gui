@@ -14,14 +14,22 @@
 
         <activity android:name=".main"
                   android:label="main">
-            <intent-filter>54
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".DisplayDb"
+                  android:label="DisplayDb">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
-        <!--<service android:name=".MyService5Async" />-->
+
+        <service android:name=".MyService5Async" />
 
         <!--<activity android:name=".LoanCalculatorActivity"-->
                   <!--android:label="@string/app_name">-->
