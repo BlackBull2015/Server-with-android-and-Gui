@@ -16,6 +16,23 @@ public class DisplayMag extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
+
+
+
+        try {
+            PreparedStatement sqlUpdate;
+            // load database driver class
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/readings", "root", "root");
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM Users WHERE verification='" +request.getParameter("Ver")+ "';");
+
+
+            if(resultSet.next()){
+
+
         ArrayList<Reading> DataGraph;
         DataGraph = CreatePointsFromDb();
         String arrayX = "[";
@@ -193,6 +210,16 @@ public class DisplayMag extends HttpServlet {
                 "</body>\n" +
                 "\n" +
                 "</html>");
+            }else{
+                getServletContext().getRequestDispatcher("/UndefVer.html").forward(request, response);
+            }
+
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
