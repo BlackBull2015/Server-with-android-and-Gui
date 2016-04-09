@@ -50,4 +50,13 @@
         <url-pattern>/PutDataToDb</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>VerifyPhone</servlet-name>
+        <servlet-class>VerifyPhone</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyPhone</servlet-name>
+        <url-pattern>/VerifyPhone</url-pattern>
+    </servlet-mapping>
+
 </web-app>

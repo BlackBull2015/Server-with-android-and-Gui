@@ -19,9 +19,8 @@ public class TestDisplayAllData extends HttpServlet {
             throws ServletException, IOException {
 
 
-    //    System.out.println(request.getParameter("Ver"));
-
         //PreSetup
+        String inputString = request.getParameter("login");
         String Type = request.getParameter("Type");
         String login = request.getParameter("Username");
         String pass = request.getParameter("Password");
@@ -37,12 +36,16 @@ public class TestDisplayAllData extends HttpServlet {
             sqlUpdate = connection.prepareStatement("INSERT INTO users ( login, password,verification ) " +"VALUES ( ? ,  ?,?)");
 
 
+
+
+
             if(Type.equalsIgnoreCase("Login")){
                 Statement statement = connection.createStatement();
                 ResultSet resultSet =statement.executeQuery("SELECT * FROM Users WHERE login='"+login+"' AND password='"+pass+"';");
 
 
                 if(resultSet.next()){
+                    System.out.println(request.getParameter("1"));
                     out.println("<!DOCTYPE html>\n" +
                             "<html >\n" +
                             "<head>\n" +
@@ -61,14 +64,14 @@ public class TestDisplayAllData extends HttpServlet {
                             "        </div>\n" +
                             "        <div class=\"box\">\n" +
                             "            <h1>Accelerometer Graph</h1>\n" +
-                            "            <form action=\"DisplayAcc\" method=\"get\">\n" +
+                            "            <form action=\"DisplayAcc\" method=\"post\">\n" +
                             "                <input type=\"image\" src=\"image/graph.png\" style=\"width:200px;height:150px\"; value=\"submit\"/>\n" +
-                            "                <input type=\"hidden\" name=\"Ver\" value=\""+resultSet.getString(4)+"\"/>\n" +
+                            "                <input type=\"hidden\" name=\"Ver\" value=\"" + resultSet.getString(4) + "\"/>\n" +
                             "            </form>\n" +
                             "            <h1>Magnetometer Graph</h1>\n" +
-                            "            <form action=\"DisplayMag\" method=\"get\" >\n" +
+                            "            <form action=\"DisplayMag\" method=\"post\" >\n" +
                             "                <input type=\"image\" src=\"image/graph.png\" style=\"width:200px;height:150px\"; value=\"submit\"/>\n" +
-                            "                <input type=\"hidden\" name=\"Ver\" value=\""+resultSet.getString(4)+"\"/>\n" +
+                            "                <input type=\"hidden\" name=\"Ver\" value=\"" + resultSet.getString(4) + "\"/>\n" +
                             "            </form>\n" +
                             "        </div>\n" +
                             "\n" +
@@ -87,6 +90,7 @@ public class TestDisplayAllData extends HttpServlet {
 
 
             }else if(Type.equalsIgnoreCase("Register")){
+                System.out.println(request.getParameter("2"));
                 int result;
                 sqlUpdate.setString(1,login);
                 sqlUpdate.setString(2,pass);
@@ -103,7 +107,7 @@ public class TestDisplayAllData extends HttpServlet {
                 }
                 getServletContext().getRequestDispatcher("/LoginAfterReg.html").forward(request, response);
 
-            } else {
+            }else {
                 out.println("Invalid response");
             }
 

@@ -44,6 +44,7 @@ public class main extends Activity {
 
     SQLiteDatabase db;
     String PathToDb = "SSPSQL";
+    Boolean Active = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,11 +58,13 @@ public class main extends Activity {
 
     @Override
     public void onDestroy(){
-        stopService(intentCallService5);
+        super.onDestroy();
+        if(Active)
+          stopService(intentCallService5);
     }//on destroy
 
     public void ReadDb(View v){
-        Intent inte = new Intent(main.this,DisplayDb.class);
+        Intent inte = new Intent(main.this,SendRequest.class);
         startActivity(inte);
     }
 
@@ -70,6 +73,7 @@ public class main extends Activity {
        // Bundle extras = intentCallService5.getExtras();
        //Toast.makeText(getBaseContext(), "To start serv", Toast.LENGTH_SHORT).show();
        //extras.putString("url",baseUrl);
+        Active = true;
          startService(intentCallService5);
     }//Read bluetooth
 
@@ -77,37 +81,37 @@ public class main extends Activity {
         stopService(intentCallService5);
     }
 
-    public void Saveip (View v){
-        EditText edt = (EditText)findViewById(R.id.editText);
-
-//        baseUrl = "http://" + edt.getText().toString() +":8080/MinMax";
-//        //Toast.makeText(getActivity(), "STATS 2",Toast.LENGTH_LONG).show();
-//        Toast.makeText(getBaseContext(), baseUrl, Toast.LENGTH_LONG).show();
-
-    }
+//    public void Saveip (View v){
+//        EditText edt = (EditText)findViewById(R.id.editText);
+//
+////        baseUrl = "http://" + edt.getText().toString() +":8080/MinMax";
+////        //Toast.makeText(getActivity(), "STATS 2",Toast.LENGTH_LONG).show();
+////        Toast.makeText(getBaseContext(), baseUrl, Toast.LENGTH_LONG).show();
+//
+//    }
 
     public void reset(View v){
         db.execSQL("DROP TABLE IF EXISTS dataRead");
     }
-
-    public void connect (View v) throws InterruptedException {
-
-        TextView txt = (TextView)findViewById(R.id.textView2);
-        Log.e("main", "prepare to read database");
-        Cursor cur =  db.rawQuery("SELECT * FROM dataRead", null);
-        Log.e("main", "Read");
-        cur.moveToFirst();
-        Log.e("main", "Cursor moved");
-        txt.setText("");
-        while(!cur.isLast()){
-            txt.append("accX"+cur.getString(1)+" AccY "+cur.getString(2)+" AccZ "+cur.getString(3)+" magx "+cur.getString(4)+" magy "+cur.getString(5)+" magz "+cur.getString(6)+" tmp "+cur.getString(7)+"\n");
-            cur.moveToNext();
-            Log.e("main", "Reading next");
-
-        }
-        Log.e("main", "Done");
-       // new backgroundAsyncTask().execute("run");
-    }//start
+//
+//    public void connect (View v) throws InterruptedException {
+//
+//        TextView txt = (TextView)findViewById(R.id.textView2);
+//        Log.e("main", "prepare to read database");
+//        Cursor cur =  db.rawQuery("SELECT * FROM dataRead", null);
+//        Log.e("main", "Read");
+//        cur.moveToFirst();
+//        Log.e("main", "Cursor moved");
+//        txt.setText("");
+//        while(!cur.isLast()){
+//            txt.append("accX"+cur.getString(1)+" AccY "+cur.getString(2)+" AccZ "+cur.getString(3)+" magx "+cur.getString(4)+" magy "+cur.getString(5)+" magz "+cur.getString(6)+" tmp "+cur.getString(7)+"\n");
+//            cur.moveToNext();
+//            Log.e("main", "Reading next");
+//
+//        }
+//        Log.e("main", "Done");
+//       // new backgroundAsyncTask().execute("run");
+//    }//start
 
 //
 //    private class ReadAllData extends AsyncTask<String, String, String> {
