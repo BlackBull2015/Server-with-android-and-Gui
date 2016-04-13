@@ -22,5 +22,18 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.28" level="application_server_libraries" />
     <orderEntry type="library" name="java-json" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.35-bin" level="project" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://C:/Php7/lib" />
+          <root url="file://C:/Php7/ext" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://C:/Php7/lib" />
+          <root url="file://C:/Php7/ext" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

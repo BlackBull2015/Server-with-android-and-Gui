@@ -23,7 +23,7 @@ public class SendRequest extends Activity {
     JSONObject json;
     Intent inte;
     //String baseUrl = "http://10.12.2.169:8080/VerifyPhone";
-    String baseUrl = "http://192.168.0.105:8080/VerifyPhone";
+    String baseUrl = "http://192.168.1.16:8080/VerifyPhone";
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
