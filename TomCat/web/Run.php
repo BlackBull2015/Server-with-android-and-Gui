@@ -1,32 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-sadsfdg
 <?php
-echo "In php";
 $servername = "localhost:3306";
 $username = "root";
 $password = "root";
 $dbname = "readings";
-echo "Created vars";
-// Create connection
-echo "Con To dbbefore";
-
-if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
-    echo 'We don\'t have mysqli!!!';
-} else {
-    echo 'Phew we have it!';
-}
-
-
 
 $conn = new mysqli("localhost:3306", "root", "root",$dbname);
-echo "Con To db";
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -36,15 +14,41 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+
+    $accX = "[";
+    $accY = "[";
+    $accZ = "[";
+    $magX = "[";
+    $magY = "[";
+    $magZ = "[";
+    $tmp = "[";
+    $time = "[";
+    $size = 0;
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["tableID"]. " - Name: " . $row["accX"]. " " . $row["accY"]. "<br>";
+        $accX .= $row["accX"].", ";
+        $accY .= $row["accY"].", ";
+        $accZ .= $row["accZ"].", ";
+        $magX .= $row["magX"].", ";
+        $magY .= $row["magY"].", ";
+        $magZ .= $row["magZ"].", ";
+        $tmp .= $row["tmp"].", ";
+        $time .= "\"".$row["time"]."\", ";
+        $size = $row["tableID"];
     }
+    $accX .= "]";
+    $accY .= "]";
+    $accZ .= "]";
+    $magX .= "]";
+    $magY .= "]";
+    $magZ .= "]";
+    $tmp .= "]";
+    $time .= "]";
+
 } else {
     echo "0 results";
 }
 $conn->close();
 ?>
-</body>
-</html>
-
-
+<?php
+//echo "X is: ".$accX."\n"."Y ".$accY."\n".$accZ."\n".$magX."\n".$magY."\n".$magZ."\n".$tmp."\n".$time."\n"."size id: ".$size;
+//?>

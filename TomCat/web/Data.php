@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="amcharts/amcharts.js" type="text/javascript"></script>
     <script src="amcharts/serial.js" type="text/javascript"></script>
-    <script src="js/testjs.js" type="text/javascript"></script>
-
+    <?php
+    include 'creategraphs.php'
+    ?>
 
 </head>
 
