@@ -16,6 +16,8 @@ html {
 
 @media(min-width:767px) {
     .navbar {
+        background-image: url("../image/navbarv2.jpg");
+        background-size: cover;
         padding: 20px 0;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -35,26 +37,51 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background-image: url("../image/about.jpg");
+    background-size: cover;
 }
 
 .about-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #eee;
+    /*background: #eee;*/
+    background-image: url("../image/about2.jpg");
+    background-size: cover;
 }
 
-.services-section {
+.accgrp-section {
     height: 100%;
     padding-top: 150px;
+    text-align: center;
+    /*background: #fff;*/
+    background-image: url("../image/data4.jpg");
+    background-size: cover;
+}
+
+.maggrp-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    /*background: #eee;*/
+    background-image: url("../image/data3.jpg");
+    background-size: cover;
+}
+
+.credit-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    /*background: #fff;*/
+    background-image: url("../image/data.jpg");
+    background-size: cover;
+
+}
+.contact-section {
+    height: auto;
+    padding-top: 0px;
     text-align: center;
     background: #fff;
 }
 
-.contact-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #eee;
-}
+
