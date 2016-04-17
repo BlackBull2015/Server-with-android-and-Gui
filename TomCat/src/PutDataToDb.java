@@ -22,15 +22,15 @@ public class PutDataToDb extends HttpServlet {
         System.out.println("Prepared");
         try{
         // load database driver class
-        Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             System.out.println("driver");
-        // connect to database
-        Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/readings", "root", "root");
+            // connect to database
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/readings", "root", "root");
             System.out.println("Hots");
-        sqlUpdate = connection.prepareStatement(
-                "INSERT INTO data ( firstName, lastName ) " +
-                        "VALUES ( ? ,  ?)" );
+            sqlUpdate = connection.prepareStatement(
+                    "INSERT INTO data ( firstName, lastName ) " +
+                            "VALUES ( ? ,  ?)" );
             System.out.println("Pre stat");
             int result;
             Calendar cal = Calendar.getInstance();

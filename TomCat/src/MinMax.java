@@ -21,8 +21,6 @@ public class MinMax extends HttpServlet {
         String sts = "";
         String inputString = request.getParameter("data");
         try {
-
-
             System.out.println("String of creation is: "+inputString );
         //    System.out.println("\nPrepering to Create JSON object");
             JSONObject inputValues = new JSONObject(inputString);
