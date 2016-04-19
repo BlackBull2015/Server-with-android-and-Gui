@@ -71,7 +71,7 @@
                     <a class="page-scroll" href="#maggrp">Magnetometer Graph</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#credits">Credits</a>
+                    <a class="page-scroll" href="#credits">Raw Data</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#Contact">Contact Us</a>
@@ -134,8 +134,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1 >Credits Section</h1>
-                <p>Thank you for visiting my website for SSP project.<br>Please come back to see more data</p>
+                <h1 >Raw Data Section</h1>
+                <p>Please hit for life update</p>
+                <form><input name="submit" type="button" value="Update" onclick="rawData()"></form>
+                <div id="rawdata" style="overflow: auto;width:100%;height:300px"><b>Table will update here</b></div>
 
             </div>
         </div>
@@ -216,6 +218,25 @@
 <!-- Scrolling Nav JavaScript -->
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/scrolling-nav.js"></script>
+<script>
+    function rawData() {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("rawdata").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","getRawData.php?q="+ " ",true);
+        xmlhttp.send();
+    }
+
+</script>
 </body>
 
 </html>
