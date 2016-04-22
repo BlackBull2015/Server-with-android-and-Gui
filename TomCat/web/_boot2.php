@@ -11,9 +11,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="amcharts/amcharts.js" type="text/javascript"></script>
+    <script src="amcharts/amcharts.js" type="text/javascript"></script>
 
-        <script src="amcharts/serial.js" type="text/javascript"></script>
+    <script src="amcharts/serial.js" type="text/javascript"></script>
     <title>SSP Bootstrap</title>
 
     <!-- Bootstrap Core CSS -->
@@ -31,8 +31,9 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <?php
-    include 'creategraphs.php';
+    include '_getgraphs2.php';
     ?>
 
 </head>
@@ -92,7 +93,7 @@
             <div class="col-lg-12">
                 <h1>SSP</h1>
                 <p><strong>Innovative</strong> technology in smart sensors field<br><strong>Totally new approach</strong> to communication between sensor pack and servers <br><strong>Welcome</strong> to ssp page</p>
-              <a class="btn btn-default page-scroll" href="#about">Click here to start</a>
+                <a class="btn btn-default page-scroll" href="#about">Click here to start</a>
             </div>
         </div>
     </div>
@@ -101,35 +102,33 @@
 
 <!-- About Section -->
 <section id="about"class="about-section" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 style="color: whitesmoke">About Section</h1>
-                    <p style="color: whitesmoke"><strong>Short description:</strong> SSP is a smart sensor pack that use KL26Z and can be mounted on any vehical.<br>By smart communication to servers all data comes live in just a second.<br>SSP is a final year project for Computer and Electronig Engineering in GMIT<br>Most recent data below></p>
-                    <a class="btn btn-default page-scroll" href="#accgrp">Click to proceed</a>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 style="color: whitesmoke">About Section</h1>
+                <p style="color: whitesmoke"><strong>Short description:</strong> SSP is a smart sensor pack that use KL26Z and can be mounted on any vehical.<br>By smart communication to servers all data comes live in just a second.<br>SSP is a final year project for Computer and Electronig Engineering in GMIT<br>Most recent data below></p>
+                <a class="btn btn-default page-scroll" href="#accgrp">Click to proceed</a>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- Services Section -->
 <section id="accgrp" class="accgrp-section" >
-                <h1 style="margin-top: 0">Accelerometer Graph</h1> <form><input name="submit" type="button" value="Update" onclick="updateAccu()"></form>
-                  <div id="accscrypt"></div>
-                <div id="chart1div" style="width: 100%; height: 400px;"></div>
-                <input type="radio" checked="true" name="group" id="rb1" onclick="setPanSelect()">Select
-                <input type="radio" name="group" id="rb2" onclick="setPanSelect()">Pan</div>
+    <h1 style="margin-top: 0">Accelerometer Graph</h1>
+    <div id="chart1div" style="width: 100%; height: 400px;"></div>
+    <input type="radio" checked="true" name="group" id="rb1" onclick="setPanSelect()">Select
+    <input type="radio" name="group" id="rb2" onclick="setPanSelect()">Pan</div>
 </section>
 
 <!-- Contact Section -->
 <section id="maggrp" class="maggrp-section">
 
-                <h1 style="margin-top: 0">Magnetometer Graph</h1>
-    <form><input name="submit" type="button" value="Update" onclick="updateMag()"></form>
-    <div id="magscrypt"></div>
-                <div id="chart2div" style="width: 100%; height: 400px; "></div>
-                <input type="radio" checked="true" name="group" id="rb3" onclick="setPanSelect()">Select
-                <input type="radio" name="group" id="rb4" onclick="setPanSelect()">Pan
+    <h1 style="margin-top: 0">Magnetometer Graph</h1>    <form><input name="submit" type="button" value="Update" onclick="updateAccu()"></form>
+    <div id="accscrypt"></div>
+    <div id="chart2div" style="width: 100%; height: 400px; "></div>
+    <input type="radio" checked="true" name="group" id="rb3" onclick="setPanSelect()">Select
+    <input type="radio" name="group" id="rb4" onclick="setPanSelect()">Pan
 </section>
 
 <!-- Contact Section -->
@@ -140,6 +139,7 @@
                 <h1 >Raw Data Section</h1>
                 <p>Please hit for life update</p>
                 <form><input name="submit" type="button" value="Update" onclick="rawData()"></form>
+
                 <div id="rawdata" style="overflow: auto;width:100%;height:300px"><b>Table will update here</b></div>
 
             </div>
@@ -256,8 +256,8 @@
         xmlhttp.send();
         eval( document.getElementById("accudynamic").innerHTML);
 
-        generateChartDataonGoAccu();
-        chart1.validateData();
+        generateChartDataonGo();
+        chart2.validateData();
 
 
     }
@@ -278,13 +278,15 @@
         };
         xmlhttp.open("GET","getmag.php?q="+ " ",true);
         xmlhttp.send();
-        eval( document.getElementById("magdynamic").innerHTML);
+        eval( document.getElementById("magudynamic").innerHTML);
 
-        generateChartDataonGoMag();
+        generateChartDataonGo();
         chart2.validateData();
 
 
     }
+
+
 
 </script>
 </body>

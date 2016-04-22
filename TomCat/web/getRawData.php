@@ -105,6 +105,7 @@ $result = $conn->query($sql);
 
 echo "<table  class=\"rwd-table\">
 <tr>
+<th>ID</th>
 <th>AccX</th>
 <th>AccY</th>
 <th>AccZ</th>
@@ -116,6 +117,7 @@ echo "<table  class=\"rwd-table\">
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
+    echo "<td data-th=\"ID\">" . $row['tableID'] . "</td>";
     echo "<td data-th=\"AccX\">" . $row['accX'] . "</td>";
     echo "<td data-th=\"AccY\">" . $row['accY'] . "</td>";
     echo "<td data-th=\"AccZ\">" . $row['accZ'] . "</td>";
