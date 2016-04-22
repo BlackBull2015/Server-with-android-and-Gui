@@ -204,24 +204,13 @@
         // generate some random data, quite different range
         function generateChartData() {
 
+                var newDate= null;
 
-            var firstDate = new Date();
-            var ArrayX = <?php echo $accX?>;
-            var ArrayY =<?php echo $accY?>;
-            var ArrayZ =<?php echo $accZ?>;
-            var Temp = <?php echo $tmp ?>;
-            var Time = <?php echo $time?>;
-            for (var i = 0; i < <?php echo $size?>; i++) {
-                // we create date objects here. In your data, you can have date strings
-                // and then set format of your dates using chart.dataDateFormat property,
-                // however when possible, use date objects, as this will speed up chart rendering.
-                var newDate =  AmCharts.stringToDate(Time[i], "YYYY-MM-DD-JJ:NN:SS");;
-
-                var line1 = ArrayX[i];
-                var line2 = ArrayY[i];
-                var line3 = ArrayZ[i];
-                var tmp = Temp[i];
-                var Loc = i;
+                var line1 = 0;
+                var line2 = 0;
+                var line3 = 0;
+                var tmp = 0;
+                var Loc = 0;
 
                 chartData.push({
                     date: newDate,
@@ -231,28 +220,17 @@
                     temp: tmp,
                     Location1: Loc
                 });
-            }
         }
         // generate some random data, quite different range
         function generateChartData2() {
 
-            var firstDate = new Date();
-            var ArrayX = <?php echo $magX?>;
-            var ArrayY =<?php echo $magY?>;
-            var ArrayZ =<?php echo $magZ?>;
-            var Temp = <?php echo $tmp ?>;
-            var Time = <?php echo $time?>;
-            for (var i = 0; i < <?php echo $size?>; i++) {
-                // we create date objects here. In your data, you can have date strings
-                // and then set format of your dates using chart.dataDateFormat property,
-                // however when possible, use date objects, as this will speed up chart rendering.
-                var newDate =  AmCharts.stringToDate(Time[i], "YYYY-MM-DD-JJ:NN:SS");;
+                var newDate =  null;
 
-                var line1 = ArrayX[i];
-                var line2 = ArrayY[i];
-                var line3 = ArrayZ[i];
-                var tmp = Temp[i];
-                var Loc = i;
+                var line1 = 0;
+                var line2 = 0;
+                var line3 = 0;
+                var tmp = 0;
+                var Loc = 0;
 
                 chartData2.push({
                     date: newDate,
@@ -262,7 +240,6 @@
                     temp: tmp,
                     Location2: Loc
                 });
-            }
         }
         // this method is called when chart is first inited as we listen for "dataUpdated" event
         function zoomChart() {

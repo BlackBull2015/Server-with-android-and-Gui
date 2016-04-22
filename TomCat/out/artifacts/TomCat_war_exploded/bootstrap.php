@@ -74,7 +74,7 @@
                     <a class="page-scroll" href="#credits">Raw Data</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#Contact">Contact Us</a>
+                    <a class="page-scroll" href="#Contact">Contact</a>
                 </li>
 
 
@@ -114,7 +114,8 @@
 
 <!-- Services Section -->
 <section id="accgrp" class="accgrp-section" >
-                <h1 style="margin-top: 0">Accelerometer Graph</h1>
+                <h1 style="margin-top: 0">Accelerometer Graph</h1> <form><input name="submit" type="button" value="Update" onclick="updateAccu()"></form>
+                  <div id="accscrypt"></div>
                 <div id="chart1div" style="width: 100%; height: 400px;"></div>
                 <input type="radio" checked="true" name="group" id="rb1" onclick="setPanSelect()">Select
                 <input type="radio" name="group" id="rb2" onclick="setPanSelect()">Pan</div>
@@ -124,6 +125,8 @@
 <section id="maggrp" class="maggrp-section">
 
                 <h1 style="margin-top: 0">Magnetometer Graph</h1>
+    <form><input name="submit" type="button" value="Update" onclick="updateMag()"></form>
+    <div id="magscrypt"></div>
                 <div id="chart2div" style="width: 100%; height: 400px; "></div>
                 <input type="radio" checked="true" name="group" id="rb3" onclick="setPanSelect()">Select
                 <input type="radio" name="group" id="rb4" onclick="setPanSelect()">Pan
@@ -195,7 +198,6 @@
             <div class="footer-icons">
 
                 <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="https://ie.linkedin.com/in/arkadiusz-bochen-3346b180"><i class="fa fa-linkedin"></i></a>
                 <a href="https://github.com/BlackBull2015"><i class="fa fa-github"></i></a>
 
@@ -234,6 +236,54 @@
         };
         xmlhttp.open("GET","getRawData.php?q="+ " ",true);
         xmlhttp.send();
+    }
+
+    function updateAccu() {
+
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("accscrypt").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","getaccu.php?q="+ " ",true);
+        xmlhttp.send();
+        eval( document.getElementById("accudynamic").innerHTML);
+
+        generateChartDataonGoAccu();
+        chart1.validateData();
+
+
+    }
+
+    function updateMag() {
+
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("magscrypt").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","getmag.php?q="+ " ",true);
+        xmlhttp.send();
+        eval( document.getElementById("magdynamic").innerHTML);
+
+        generateChartDataonGoMag();
+        chart2.validateData();
+
+
     }
 
 </script>

@@ -44,6 +44,11 @@ public class SendRequest extends Activity {
             }
         }
 
+
+    public void bypass (View v){
+        startActivity(inte);
+    }
+
     private class HttpAsyncTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {

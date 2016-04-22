@@ -5,6 +5,20 @@
               android:layout_height="match_parent">
 
     <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acc graph"
+            android:id="@+id/button4" android:layout_gravity="center_horizontal"
+            android:onClick="graph"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mag graph"
+            android:id="@+id/button9" android:layout_gravity="center_horizontal"
+            android:onClick="graph2"/>
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Update"
@@ -13,12 +27,11 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/scrollView" android:layout_gravity="center_horizontal">
+            android:id="@+id/scrollView" android:layout_gravity="center_horizontal" android:fillViewport="false">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Small Text"
                 android:id="@+id/textViewdb"/>
     </ScrollView>
 </LinearLayout>

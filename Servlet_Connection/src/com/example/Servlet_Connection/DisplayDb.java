@@ -30,6 +30,23 @@ public class DisplayDb extends Activity {
     }//on destroy
 
 
+    public void graph (View v){
+        Intent inte;
+        inte = new Intent(this,accgraph.class);
+
+        startActivity(inte);
+
+    }
+
+    public void graph2 (View v){
+        Intent inte;
+        inte = new Intent(this,maggraph.class);
+
+        startActivity(inte);
+
+    }
+
+
     public void Update (View v){
 
         TextView txt = (TextView)findViewById(R.id.textViewdb);
@@ -40,7 +57,7 @@ public class DisplayDb extends Activity {
         Log.e("main", "Cursor moved");
         txt.setText("");
         while(!cur.isLast()){
-            txt.append("accX"+cur.getString(1)+" AccY "+cur.getString(2)+" AccZ "+cur.getString(3)+" magx "+cur.getString(4)+" magy "+cur.getString(5)+" magz "+cur.getString(6)+" tmp "+cur.getString(7)+"\n");
+            txt.append("ID" + cur.getString(0)+ "accX"+cur.getString(1)+" AccY "+cur.getString(2)+" AccZ "+cur.getString(3)+" magx "+cur.getString(4)+" magy "+cur.getString(5)+" magz "+cur.getString(6)+" tmp "+cur.getString(7)+"\n");
             cur.moveToNext();
             Log.e("main", "Reading next");
 
