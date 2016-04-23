@@ -38,7 +38,8 @@ public class MyService5Async extends Service {
 	BluetoothDevice masterdevice;
 	private static String address = "98:D3:33:80:6E:8F";
 	boolean running = true;
-	String baseUrl = "http://10.12.2.169:8080/MinMax";
+	String baseUrl = "http://192.168.0.101:8080/MinMax";
+	//String baseUrl = "http://10.12.2.169:8080/MinMax";
 	SQLiteDatabase db;
 	String PathToDb = "SSPSQL";
 
